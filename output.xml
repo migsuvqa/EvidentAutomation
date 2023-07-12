@@ -1,0 +1,3332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230712 07:57:31.673" rpa="false" schemaversion="4">
+<suite id="s1" name="Use Case#1 Existing Evident Design customer - Copy" source="c:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\Use Case#1 Existing Evident Design customer - Copy.robot">
+<test id="s1-t1" name="testing lang" line="172">
+<kw name="Go to Preprod Admin Hub" library="Globalkeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${AdminUrl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 07:57:32.561" level="INFO">Opening browser 'edge' to base url 'https://ppevidentadminhub.azurewebsites.net/#/login'.</msg>
+<msg timestamp="20230712 07:57:32.574" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230712 07:57:32.557" endtime="20230712 07:57:56.419"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 07:57:56.420" endtime="20230712 07:57:56.423"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 07:57:56.423" endtime="20230712 07:57:56.558"/>
+</kw>
+<status status="PASS" starttime="20230712 07:57:32.554" endtime="20230712 07:57:56.560"/>
+</kw>
+<kw name="Login admin account" library="Globalkeywords">
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="email"]</arg>
+<arg>${adminUser}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:57:56.573" level="INFO">Typing text 'passportadmin@getnada.com' into text field 'xpath=//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20230712 07:57:56.567" endtime="20230712 07:57:56.771"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${adminPass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:57:56.776" level="INFO">Typing text 'password1' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230712 07:57:56.772" endtime="20230712 07:57:56.880"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/app-root/div/app-login/mat-card/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:57:56.882" level="INFO">Clicking element 'xpath=/html/body/app-root/div/app-login/mat-card/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230712 07:57:56.881" endtime="20230712 07:57:56.944"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 07:57:58.947" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 07:57:56.946" endtime="20230712 07:57:58.948"/>
+</kw>
+<status status="PASS" starttime="20230712 07:57:56.563" endtime="20230712 07:57:58.950"/>
+</kw>
+<kw name="Find the lab and add user" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/app-root/div/app-customer-administration/mat-accordion/evident-design</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:57:58.962" level="INFO">Clicking element 'xpath=/html/body/app-root/div/app-customer-administration/mat-accordion/evident-design'.</msg>
+<status status="PASS" starttime="20230712 07:57:58.956" endtime="20230712 07:58:02.402"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="mat-input-2"]</arg>
+<arg>${labname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:02.405" level="INFO">Typing text 'Automation lab' into text field 'xpath=//*[@id="mat-input-2"]'.</msg>
+<status status="PASS" starttime="20230712 07:58:02.403" endtime="20230712 07:58:02.667"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 07:58:04.670" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 07:58:02.669" endtime="20230712 07:58:04.671"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="mat-tab-content-0-0"]/div/div/div/mat-table/mat-row/mat-cell[2]/mat-icon</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 07:58:04.673" endtime="20230712 07:58:20.851"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="mat-tab-content-0-0"]/div/div/div/mat-table/mat-row/mat-cell[2]/mat-icon</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:20.856" level="INFO">Clicking element 'xpath=//*[@id="mat-tab-content-0-0"]/div/div/div/mat-table/mat-row/mat-cell[2]/mat-icon'.</msg>
+<status status="PASS" starttime="20230712 07:58:20.852" endtime="20230712 07:58:20.928"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 07:58:25.931" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230712 07:58:20.930" endtime="20230712 07:58:25.932"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 07:58:25.942" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 07:58:25.936" endtime="20230712 07:58:25.957"/>
+</kw>
+<status status="PASS" starttime="20230712 07:58:25.934" endtime="20230712 07:58:25.959"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 07:58:25.961" endtime="20230712 07:58:26.008"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:26.011" level="INFO">Clicking element 'xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon'.</msg>
+<status status="PASS" starttime="20230712 07:58:26.009" endtime="20230712 07:58:26.169"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="customer-information"]/div[2]/div/div/div[2]/div[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:26.173" level="INFO">Clicking element 'xpath=//*[@id="customer-information"]/div[2]/div/div/div[2]/div[3]/a'.</msg>
+<status status="PASS" starttime="20230712 07:58:26.170" endtime="20230712 07:58:26.248"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="customer-information"]/div[3]/div</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 07:58:26.249" endtime="20230712 07:58:26.555"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="firstName_0"]</arg>
+<arg>Newuserfname</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:26.563" level="INFO">Typing text 'Newuserfname' into text field 'xpath=//*[@id="firstName_0"]'.</msg>
+<status status="PASS" starttime="20230712 07:58:26.558" endtime="20230712 07:58:26.857"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="lastName_0"]</arg>
+<arg>NewuserLname</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:26.861" level="INFO">Typing text 'NewuserLname' into text field 'xpath=//*[@id="lastName_0"]'.</msg>
+<status status="PASS" starttime="20230712 07:58:26.859" endtime="20230712 07:58:27.133"/>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<var>${usertimestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<msg timestamp="20230712 07:58:27.135" level="INFO">${usertimestamp} = 1689119907</msg>
+<status status="PASS" starttime="20230712 07:58:27.134" endtime="20230712 07:58:27.136"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${nuseremail}</var>
+<arg>SEPARATOR=@</arg>
+<arg>labtestautomation${usertimestamp}</arg>
+<arg>getnada.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230712 07:58:27.140" level="INFO">${nuseremail} = labtestautomation1689119907@getnada.com</msg>
+<status status="PASS" starttime="20230712 07:58:27.136" endtime="20230712 07:58:27.142"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nuseremail}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230712 07:58:27.146" level="INFO">${nuseremail} = labtestautomation1689119907@getnada.com</msg>
+<status status="PASS" starttime="20230712 07:58:27.143" endtime="20230712 07:58:27.147"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="username_0"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:27.153" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="username_0"]'.</msg>
+<status status="PASS" starttime="20230712 07:58:27.148" endtime="20230712 07:58:27.694"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${nuseremail}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 07:58:27.695" endtime="20230712 07:58:27.699"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 07:58:27.703" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 07:58:27.701" endtime="20230712 07:58:27.714"/>
+</kw>
+<status status="PASS" starttime="20230712 07:58:27.699" endtime="20230712 07:58:27.715"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="customer-information"]/div[1]/div/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:58:27.718" level="INFO">Clicking element 'xpath=//*[@id="customer-information"]/div[1]/div/div/div[2]'.</msg>
+<status status="PASS" starttime="20230712 07:58:27.716" endtime="20230712 07:58:27.807"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 07:58:31.814" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230712 07:58:27.810" endtime="20230712 07:58:31.815"/>
+</kw>
+<status status="PASS" starttime="20230712 07:57:58.953" endtime="20230712 07:58:31.817"/>
+</kw>
+<kw name="Go to new user ssu" library="Globalkeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${NewUserSsu}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 07:58:31.830" level="INFO">Opening browser 'edge' to base url 'https://preprodevidentdesign.azurewebsites.net/Account/Registration'.</msg>
+<msg timestamp="20230712 07:58:31.845" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230712 07:58:31.824" endtime="20230712 07:59:21.868"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>100s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 07:59:21.872" endtime="20230712 07:59:21.877"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 07:59:21.878" endtime="20230712 07:59:22.019"/>
+</kw>
+<status status="PASS" starttime="20230712 07:58:31.819" endtime="20230712 07:59:22.021"/>
+</kw>
+<kw name="self sign up the user" library="Globalkeywords">
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="usr"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:22.033" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="usr"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:22.026" endtime="20230712 07:59:22.334"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="eml"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:22.337" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="eml"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:22.335" endtime="20230712 07:59:22.537"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="pwd"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:22.541" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="pwd"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:22.538" endtime="20230712 07:59:22.679"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="cfmpwd"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:22.683" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="cfmpwd"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:22.680" endtime="20230712 07:59:22.793"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="lab-register-page"]/div/form/div[5]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:22.794" level="INFO">Clicking element 'xpath=//*[@id="lab-register-page"]/div/form/div[5]/button'.</msg>
+<status status="PASS" starttime="20230712 07:59:22.793" endtime="20230712 07:59:22.926"/>
+</kw>
+<status status="PASS" starttime="20230712 07:59:22.023" endtime="20230712 07:59:22.927"/>
+</kw>
+<kw name="Go to evident staging" library="Globalkeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${Url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 07:59:22.935" level="INFO">Opening browser 'edge' to base url 'https://stagingevidentdigital.xyz/'.</msg>
+<msg timestamp="20230712 07:59:22.949" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230712 07:59:22.932" endtime="20230712 07:59:45.406"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>100s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 07:59:45.407" endtime="20230712 07:59:45.417"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 07:59:45.419" endtime="20230712 07:59:45.555"/>
+</kw>
+<status status="PASS" starttime="20230712 07:59:22.928" endtime="20230712 07:59:45.557"/>
+</kw>
+<kw name="Login new lab user account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:45.568" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a'.</msg>
+<status status="PASS" starttime="20230712 07:59:45.562" endtime="20230712 07:59:55.416"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:55.428" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:55.420" endtime="20230712 07:59:55.647"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:55.653" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 07:59:55.649" endtime="20230712 07:59:55.816"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 07:59:55.819" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 07:59:55.817" endtime="20230712 08:00:54.449"/>
+</kw>
+<status status="PASS" starttime="20230712 07:59:45.559" endtime="20230712 08:00:54.450"/>
+</kw>
+<kw name="Upload file" library="Globalkeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>timeout=100s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230712 08:00:54.456" endtime="20230712 08:00:54.475"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/download.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:00:54.477" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\download.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:00:54.476" endtime="20230712 08:00:54.542"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:00:57.545" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 08:00:54.542" endtime="20230712 08:00:57.546"/>
+</kw>
+<status status="PASS" starttime="20230712 08:00:54.452" endtime="20230712 08:00:57.548"/>
+</kw>
+<kw name=" close support pop up modal" library="Globalkeywords">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${supportpop1}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:00:57.591" level="INFO">Current page contains element 'xpath=//*[@id="hubspot-conversations-iframe"]'.</msg>
+<status status="PASS" starttime="20230712 08:00:57.560" endtime="20230712 08:00:57.593"/>
+</kw>
+<msg timestamp="20230712 08:00:57.595" level="INFO">${supportpop1} = True</msg>
+<status status="PASS" starttime="20230712 08:00:57.555" endtime="20230712 08:00:57.596"/>
+</kw>
+<if>
+<branch type="IF" condition="${supportpop1} == ${True}">
+<kw name="Select Frame" library="Selenium2Library">
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230712 08:00:57.605" level="INFO">Selecting frame 'xpath=//*[@id="hubspot-conversations-iframe"]'.</msg>
+<status status="PASS" starttime="20230712 08:00:57.599" endtime="20230712 08:00:57.661"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${supportpop}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:00:57.681" level="INFO">Current page contains element 'xpath=//*[@id="welcome-message"]'.</msg>
+<status status="PASS" starttime="20230712 08:00:57.665" endtime="20230712 08:00:57.681"/>
+</kw>
+<msg timestamp="20230712 08:00:57.683" level="INFO">${supportpop} = True</msg>
+<status status="PASS" starttime="20230712 08:00:57.662" endtime="20230712 08:00:57.684"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${supportpop}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:00:57.684" endtime="20230712 08:00:57.687"/>
+</kw>
+<if>
+<branch type="IF" condition="${supportpop} == ${True}">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:00:57.691" level="INFO">Clicking element 'xpath=//*[@id="welcome-message"]'.</msg>
+<status status="PASS" starttime="20230712 08:00:57.689" endtime="20230712 08:00:57.802"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:00:58.307" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20230712 08:00:57.804" endtime="20230712 08:00:58.308"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:00:58.316" level="INFO">Clicking element 'xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button'.</msg>
+<status status="PASS" starttime="20230712 08:00:58.310" endtime="20230712 08:00:58.513"/>
+</kw>
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230712 08:00:58.514" endtime="20230712 08:00:58.524"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:00:59.528" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:00:58.525" endtime="20230712 08:00:59.529"/>
+</kw>
+<status status="PASS" starttime="20230712 08:00:57.687" endtime="20230712 08:00:59.531"/>
+</branch>
+<branch type="ELSE">
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230712 08:00:59.538" endtime="20230712 08:00:59.540"/>
+</kw>
+<status status="NOT RUN" starttime="20230712 08:00:59.532" endtime="20230712 08:00:59.541"/>
+</branch>
+<status status="PASS" starttime="20230712 08:00:57.687" endtime="20230712 08:00:59.542"/>
+</if>
+<status status="PASS" starttime="20230712 08:00:57.597" endtime="20230712 08:00:59.542"/>
+</branch>
+<branch type="ELSE">
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230712 08:00:59.545" endtime="20230712 08:00:59.546"/>
+</kw>
+<status status="NOT RUN" starttime="20230712 08:00:59.543" endtime="20230712 08:00:59.548"/>
+</branch>
+<status status="PASS" starttime="20230712 08:00:57.597" endtime="20230712 08:00:59.549"/>
+</if>
+<status status="PASS" starttime="20230712 08:00:57.550" endtime="20230712 08:00:59.550"/>
+</kw>
+<kw name="Fill up case with favorite" library="Globalkeywords">
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>xpath=//*[@id="uia-draft-file-table-rows"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:00:59.598" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="2FDEBA0FEF7B68DDD38ED4838FB07834_element_77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230712 08:00:59.559" endtime="20230712 08:00:59.598"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230712 08:00:59.606" level="INFO">Length is 23</msg>
+<msg timestamp="20230712 08:00:59.607" level="INFO">${length} = 23</msg>
+<status status="PASS" starttime="20230712 08:00:59.600" endtime="20230712 08:00:59.608"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${last_index}</var>
+<arg>${length} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:00:59.614" level="INFO">${last_index} = 22</msg>
+<status status="PASS" starttime="20230712 08:00:59.610" endtime="20230712 08:00:59.615"/>
+</kw>
+<if>
+<branch type="IF" condition="${last_index} == 0">
+<kw name="Set Variable" library="BuiltIn">
+<var>${thetr}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230712 08:00:59.619" endtime="20230712 08:00:59.622"/>
+</kw>
+<status status="NOT RUN" starttime="20230712 08:00:59.616" endtime="20230712 08:00:59.623"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" library="BuiltIn">
+<var>${thetr}</var>
+<arg>[${length}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:00:59.631" level="INFO">${thetr} = [23]</msg>
+<status status="PASS" starttime="20230712 08:00:59.627" endtime="20230712 08:00:59.632"/>
+</kw>
+<status status="PASS" starttime="20230712 08:00:59.624" endtime="20230712 08:00:59.633"/>
+</branch>
+<status status="PASS" starttime="20230712 08:00:59.616" endtime="20230712 08:00:59.634"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${thetr} this is the log</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:00:59.635" endtime="20230712 08:00:59.639"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="select-design-type-${last_index}-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:00:59.645" level="INFO">Clicking element 'xpath=//*[@id="select-design-type-22-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:00:59.641" endtime="20230712 08:00:59.797"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:00:59.804" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[23]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p'.</msg>
+<status status="PASS" starttime="20230712 08:00:59.799" endtime="20230712 08:01:00.005"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkbox-crown-and-bridge-${last_index}-0-0"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:00.010" level="INFO">Clicking element 'xpath=//*[@id="checkbox-crown-and-bridge-22-0-0"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:01:00.007" endtime="20230712 08:01:00.263"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${last_index}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:00.266" level="INFO">Clicking element 'xpath=//*[@id="instruction-22"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:00.264" endtime="20230712 08:01:00.451"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="units-${last_index}-0"]</arg>
+<arg>2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:00.455" level="INFO">Typing text '2' into text field 'xpath=//*[@id="units-22-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:00.453" endtime="20230712 08:01:00.698"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="position-${last_index}-0"]</arg>
+<arg>Anterior</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:01:00.702" level="INFO">Selecting options from selection list 'xpath=//*[@id="position-22-0"]' by label Anterior.</msg>
+<status status="PASS" starttime="20230712 08:01:00.699" endtime="20230712 08:01:00.903"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="scannerType-${last_index}"]</arg>
+<arg>3Shape</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:01:00.908" level="INFO">Selecting options from selection list 'xpath=//*[@id="scannerType-22"]' by label 3Shape.</msg>
+<status status="PASS" starttime="20230712 08:01:00.904" endtime="20230712 08:01:00.987"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${last_index}"]</arg>
+<arg>test automation</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:00.991" level="INFO">Typing text 'test automation' into text field 'xpath=//*[@id="instruction-22"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:00.988" endtime="20230712 08:01:01.659"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:01:02.664" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:01:01.662" endtime="20230712 08:01:02.666"/>
+</kw>
+<status status="PASS" starttime="20230712 08:00:59.555" endtime="20230712 08:01:02.669"/>
+</kw>
+<kw name="Confirm Submit" library="Globalkeywords">
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>xpath=//*[@id="uia-draft-file-table-rows"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:01:02.699" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="2FDEBA0FEF7B68DDD38ED4838FB07834_element_77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230712 08:01:02.673" endtime="20230712 08:01:02.699"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230712 08:01:02.702" level="INFO">Length is 23</msg>
+<msg timestamp="20230712 08:01:02.702" level="INFO">${length} = 23</msg>
+<status status="PASS" starttime="20230712 08:01:02.700" endtime="20230712 08:01:02.704"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${last_index}</var>
+<arg>${length} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:01:02.707" level="INFO">${last_index} = 22</msg>
+<status status="PASS" starttime="20230712 08:01:02.704" endtime="20230712 08:01:02.707"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-submit-one-${last_index}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:02.711" level="INFO">Clicking element 'xpath=//*[@id="uia-submit-one-22"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:02.708" endtime="20230712 08:01:02.806"/>
+</kw>
+<status status="PASS" starttime="20230712 08:01:02.671" endtime="20230712 08:01:02.806"/>
+</kw>
+<kw name="Close and check if Case is created" library="Globalkeywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<arg>to wait submittion of case</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:01:12.811" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20230712 08:01:12.812" level="INFO">to wait submittion of case</msg>
+<status status="PASS" starttime="20230712 08:01:02.809" endtime="20230712 08:01:12.813"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:01:12.815" endtime="20230712 08:01:13.152"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:13.159" level="INFO">Clicking element 'xpath=//*[@id="close-wrapper"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:13.154" endtime="20230712 08:01:13.307"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:01:13.308" endtime="20230712 08:01:14.513"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:14.569" level="INFO">${casenumber} = 871298979</msg>
+<status status="PASS" starttime="20230712 08:01:14.515" endtime="20230712 08:01:14.571"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno}</var>
+<arg>${casenumber}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230712 08:01:14.576" level="INFO">${checkcaseno} = 871298979</msg>
+<status status="PASS" starttime="20230712 08:01:14.573" endtime="20230712 08:01:14.577"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${checkcaseno}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:01:14.578" endtime="20230712 08:01:14.581"/>
+</kw>
+<status status="PASS" starttime="20230712 08:01:02.807" endtime="20230712 08:01:14.583"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:14.619" level="INFO">${casenumber} = 871298979</msg>
+<status status="PASS" starttime="20230712 08:01:14.586" endtime="20230712 08:01:14.619"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno}</var>
+<arg>${casenumber}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230712 08:01:14.625" level="INFO">${checkcaseno} = 871298979</msg>
+<status status="PASS" starttime="20230712 08:01:14.623" endtime="20230712 08:01:14.626"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${checkcaseno}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:01:14.629" endtime="20230712 08:01:14.632"/>
+</kw>
+<kw name="Log out lab account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:14.639" level="INFO">Clicking element 'xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div'.</msg>
+<status status="PASS" starttime="20230712 08:01:14.636" endtime="20230712 08:01:14.735"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:14.739" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:14.737" endtime="20230712 08:01:14.831"/>
+</kw>
+<status status="PASS" starttime="20230712 08:01:14.634" endtime="20230712 08:01:14.832"/>
+</kw>
+<kw name="Login Designer account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:14.840" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230712 08:01:14.838" endtime="20230712 08:01:30.443"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${edusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:30.449" level="INFO">Typing text 'design@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:30.444" endtime="20230712 08:01:30.563"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${edpassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:30.568" level="INFO">Typing text 'password1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 08:01:30.565" endtime="20230712 08:01:30.653"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:01:30.656" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 08:01:30.654" endtime="20230712 08:02:27.010"/>
+</kw>
+<status status="PASS" starttime="20230712 08:01:14.834" endtime="20230712 08:02:27.011"/>
+</kw>
+<kw name="Process the case number" library="Globalkeywords">
+<arg>${checkcaseno}</arg>
+<arg>${labname}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:02:29.019" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:02:27.018" endtime="20230712 08:02:29.020"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-allcases"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:02:29.024" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-allcases"]'.</msg>
+<status status="PASS" starttime="20230712 08:02:29.021" endtime="20230712 08:02:29.177"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${checkcaseno}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:02:29.181" level="INFO">Clicking element 'class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-871298979'.</msg>
+<status status="PASS" starttime="20230712 08:02:29.179" endtime="20230712 08:02:38.473"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:02:40.475" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:02:38.473" endtime="20230712 08:02:40.477"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigned"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:02:40.484" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-assigned"]'.</msg>
+<status status="PASS" starttime="20230712 08:02:40.480" endtime="20230712 08:02:40.653"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:02:42.658" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:02:40.656" endtime="20230712 08:02:42.659"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:02:42.666" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_871298979"]/td[10]/div[2]/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230712 08:02:42.661" endtime="20230712 08:02:42.910"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:02.913" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20230712 08:02:42.911" endtime="20230712 08:03:02.915"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-inprogress"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:02.923" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-inprogress"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:02.916" endtime="20230712 08:03:03.098"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:05.104" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:03:03.100" endtime="20230712 08:03:05.104"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:05.111" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_871298979"]/td[10]/div[3]/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230712 08:03:05.105" endtime="20230712 08:03:05.416"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/design1.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:03:05.421" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\design1.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:03:05.417" endtime="20230712 08:03:05.547"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>class=remove_file.ng-scope</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:03:05.547" endtime="20230712 08:03:06.234"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:07.238" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:03:06.236" endtime="20230712 08:03:07.239"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:07.245" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-submit"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:07.241" endtime="20230712 08:03:07.365"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:09.368" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:03:07.366" endtime="20230712 08:03:09.370"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="submit-design-modal"]/div[1]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:09.375" level="INFO">Clicking element 'xpath=//*[@id="submit-design-modal"]/div[1]/img'.</msg>
+<status status="PASS" starttime="20230712 08:03:09.372" endtime="20230712 08:03:09.534"/>
+</kw>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230712 08:03:09.538" endtime="20230712 08:03:10.242"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:03:10.246" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:03:10.244" endtime="20230712 08:03:10.258"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:10.243" endtime="20230712 08:03:10.260"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-completed"]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:10.264" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-completed"]/div'.</msg>
+<status status="PASS" starttime="20230712 08:03:10.261" endtime="20230712 08:03:10.345"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${casesucompleted}</var>
+<arg>Page Should Contain</arg>
+<arg>${checkcaseno}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${checkcaseno}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230712 08:03:11.241" level="INFO">Current page contains text '871298979'.</msg>
+<status status="PASS" starttime="20230712 08:03:10.348" endtime="20230712 08:03:11.242"/>
+</kw>
+<msg timestamp="20230712 08:03:11.243" level="INFO">${casesucompleted} = True</msg>
+<status status="PASS" starttime="20230712 08:03:10.346" endtime="20230712 08:03:11.243"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${casesucompleted}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:03:11.244" endtime="20230712 08:03:11.246"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${casesucompleted} is completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:03:11.247" endtime="20230712 08:03:11.249"/>
+</kw>
+<status status="PASS" starttime="20230712 08:02:27.014" endtime="20230712 08:03:11.250"/>
+</kw>
+<kw name="Logout designer account" library="Globalkeywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:03:11.256" endtime="20230712 08:03:11.293"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:11.298" level="INFO">Clicking element 'xpath=//*[@id="single-button"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:11.295" endtime="20230712 08:03:11.377"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:11.380" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:11.378" endtime="20230712 08:03:11.445"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:11.252" endtime="20230712 08:03:11.446"/>
+</kw>
+<kw name="Relogin new lab user account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:11.454" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230712 08:03:11.451" endtime="20230712 08:03:22.665"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:22.675" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:22.669" endtime="20230712 08:03:22.830"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:22.833" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:22.830" endtime="20230712 08:03:22.907"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:22.909" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 08:03:22.907" endtime="20230712 08:03:24.013"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:11.448" endtime="20230712 08:03:24.014"/>
+</kw>
+<kw name="Search the completed case" library="Globalkeywords">
+<arg>${casenumber}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:29.019" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230712 08:03:24.018" endtime="20230712 08:03:29.021"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-filter"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:29.026" level="INFO">Clicking element 'xpath=//*[@id="ed-completed-filter"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:29.023" endtime="20230712 08:03:38.401"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${casecompleted}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="checkCases_No_${completedcase}"]/td[2]/div[1]/p[1]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase}"]/td[2]/div[1]/p[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:03:39.253" level="INFO">Current page contains element 'xpath=//*[@id="checkCases_No_871298979"]/td[2]/div[1]/p[1]'.</msg>
+<status status="PASS" starttime="20230712 08:03:38.406" endtime="20230712 08:03:39.254"/>
+</kw>
+<msg timestamp="20230712 08:03:39.254" level="INFO">${casecompleted} = True</msg>
+<status status="PASS" starttime="20230712 08:03:38.402" endtime="20230712 08:03:39.255"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${casecompleted}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:03:39.255" endtime="20230712 08:03:39.256"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:24.015" endtime="20230712 08:03:39.257"/>
+</kw>
+<kw name="download the design file" library="Globalkeywords">
+<arg>${casenumber}</arg>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-download-case-attachment"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:03:39.260" endtime="20230712 08:03:39.560"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase}"]/td[7]/div[3]/div[2]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:39.569" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_871298979"]/td[7]/div[3]/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:03:39.562" endtime="20230712 08:03:39.705"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait for the file to download</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:54.711" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:03:54.713" level="INFO">wait for the file to download</msg>
+<status status="PASS" starttime="20230712 08:03:39.706" endtime="20230712 08:03:54.715"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:39.257" endtime="20230712 08:03:54.716"/>
+</kw>
+<kw name="Check if element is removed from Not yet completed" library="Globalkeywords">
+<arg>${casenumber}</arg>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230712 08:03:54.723" endtime="20230712 08:03:55.679"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:03:58.681" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 08:03:55.680" endtime="20230712 08:03:58.684"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:03:58.692" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:03:58.688" endtime="20230712 08:03:58.712"/>
+</kw>
+<status status="PASS" starttime="20230712 08:03:58.685" endtime="20230712 08:03:58.714"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-not-downloaded-filter"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:03:58.720" level="INFO">Clicking element 'xpath=//*[@id="ed-completed-not-downloaded-filter"]'.</msg>
+<status status="PASS" starttime="20230712 08:03:58.716" endtime="20230712 08:03:58.850"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:04:03.853" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230712 08:03:58.851" endtime="20230712 08:04:03.854"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>css=.ed-case-no.row-word-break</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:04:03.901" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_124")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20230712 08:04:03.856" endtime="20230712 08:04:03.902"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_124")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:03.924" level="INFO">${text} = 891298963
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:03.905" endtime="20230712 08:04:03.925"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:03.932" level="INFO">${textcaseno} = 891298963</msg>
+<status status="PASS" starttime="20230712 08:04:03.926" endtime="20230712 08:04:03.933"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:03.935" endtime="20230712 08:04:03.938"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:03.905" endtime="20230712 08:04:03.939"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_125")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:03.958" level="INFO">${text} = 791298955
+Files:
+download.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:03.941" endtime="20230712 08:04:03.959"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:03.966" level="INFO">${textcaseno} = 791298955</msg>
+<status status="PASS" starttime="20230712 08:04:03.960" endtime="20230712 08:04:03.966"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:03.968" endtime="20230712 08:04:03.970"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:03.940" endtime="20230712 08:04:03.970"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_126")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:03.993" level="INFO">${text} = 461298967
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:03.974" endtime="20230712 08:04:03.994"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:03.998" level="INFO">${textcaseno} = 461298967</msg>
+<status status="PASS" starttime="20230712 08:04:03.995" endtime="20230712 08:04:03.998"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:03.999" endtime="20230712 08:04:04.000"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:03.972" endtime="20230712 08:04:04.001"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_127")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.017" level="INFO">${text} = 101298968
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.002" endtime="20230712 08:04:04.017"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.021" level="INFO">${textcaseno} = 101298968</msg>
+<status status="PASS" starttime="20230712 08:04:04.018" endtime="20230712 08:04:04.021"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.021" endtime="20230712 08:04:04.022"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.001" endtime="20230712 08:04:04.023"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_128")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.042" level="INFO">${text} = 451298969
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.024" endtime="20230712 08:04:04.043"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.049" level="INFO">${textcaseno} = 451298969</msg>
+<status status="PASS" starttime="20230712 08:04:04.045" endtime="20230712 08:04:04.049"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.050" endtime="20230712 08:04:04.052"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.023" endtime="20230712 08:04:04.052"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_129")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.069" level="INFO">${text} = 441298964
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.054" endtime="20230712 08:04:04.070"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.074" level="INFO">${textcaseno} = 441298964</msg>
+<status status="PASS" starttime="20230712 08:04:04.070" endtime="20230712 08:04:04.074"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.075" endtime="20230712 08:04:04.076"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.053" endtime="20230712 08:04:04.077"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_130")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.095" level="INFO">${text} = 161298965
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.079" endtime="20230712 08:04:04.096"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.100" level="INFO">${textcaseno} = 161298965</msg>
+<status status="PASS" starttime="20230712 08:04:04.097" endtime="20230712 08:04:04.100"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.100" endtime="20230712 08:04:04.102"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.078" endtime="20230712 08:04:04.102"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_131")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.118" level="INFO">${text} = 561298888
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.103" endtime="20230712 08:04:04.118"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.122" level="INFO">${textcaseno} = 561298888</msg>
+<status status="PASS" starttime="20230712 08:04:04.119" endtime="20230712 08:04:04.122"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.123" endtime="20230712 08:04:04.124"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.102" endtime="20230712 08:04:04.124"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_132")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.143" level="INFO">${text} = 621298889
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.126" endtime="20230712 08:04:04.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.148" level="INFO">${textcaseno} = 621298889</msg>
+<status status="PASS" starttime="20230712 08:04:04.145" endtime="20230712 08:04:04.149"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.149" endtime="20230712 08:04:04.151"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.125" endtime="20230712 08:04:04.151"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_133")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.167" level="INFO">${text} = 911298884
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.152" endtime="20230712 08:04:04.168"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.173" level="INFO">${textcaseno} = 911298884</msg>
+<status status="PASS" starttime="20230712 08:04:04.169" endtime="20230712 08:04:04.174"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.175" endtime="20230712 08:04:04.176"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.151" endtime="20230712 08:04:04.177"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_134")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.194" level="INFO">${text} = 251298885
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.179" endtime="20230712 08:04:04.195"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.200" level="INFO">${textcaseno} = 251298885</msg>
+<status status="PASS" starttime="20230712 08:04:04.196" endtime="20230712 08:04:04.200"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.201" endtime="20230712 08:04:04.202"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.178" endtime="20230712 08:04:04.203"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_135")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.221" level="INFO">${text} = 751298872
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.205" endtime="20230712 08:04:04.221"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.225" level="INFO">${textcaseno} = 751298872</msg>
+<status status="PASS" starttime="20230712 08:04:04.222" endtime="20230712 08:04:04.225"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.226" endtime="20230712 08:04:04.228"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.203" endtime="20230712 08:04:04.229"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_136")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.247" level="INFO">${text} = 441298873
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.231" endtime="20230712 08:04:04.247"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.253" level="INFO">${textcaseno} = 441298873</msg>
+<status status="PASS" starttime="20230712 08:04:04.249" endtime="20230712 08:04:04.254"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.255" endtime="20230712 08:04:04.257"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.230" endtime="20230712 08:04:04.258"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_137")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.300" level="INFO">${text} = 261298868
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.259" endtime="20230712 08:04:04.301"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.310" level="INFO">${textcaseno} = 261298868</msg>
+<status status="PASS" starttime="20230712 08:04:04.303" endtime="20230712 08:04:04.311"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.314" endtime="20230712 08:04:04.318"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.258" endtime="20230712 08:04:04.319"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_138")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.416" level="INFO">${text} = 801298869
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.323" endtime="20230712 08:04:04.416"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.419" level="INFO">${textcaseno} = 801298869</msg>
+<status status="PASS" starttime="20230712 08:04:04.417" endtime="20230712 08:04:04.420"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.420" endtime="20230712 08:04:04.422"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.321" endtime="20230712 08:04:04.422"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_139")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.437" level="INFO">${text} = 761298830
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.423" endtime="20230712 08:04:04.438"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.445" level="INFO">${textcaseno} = 761298830</msg>
+<status status="PASS" starttime="20230712 08:04:04.439" endtime="20230712 08:04:04.446"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.447" endtime="20230712 08:04:04.449"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.422" endtime="20230712 08:04:04.450"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_140")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.468" level="INFO">${text} = 251298831
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.452" endtime="20230712 08:04:04.468"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.474" level="INFO">${textcaseno} = 251298831</msg>
+<status status="PASS" starttime="20230712 08:04:04.469" endtime="20230712 08:04:04.474"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.475" endtime="20230712 08:04:04.477"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.451" endtime="20230712 08:04:04.478"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_141")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.489" level="INFO">${text} = 611298832
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.479" endtime="20230712 08:04:04.489"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.496" level="INFO">${textcaseno} = 611298832</msg>
+<status status="PASS" starttime="20230712 08:04:04.490" endtime="20230712 08:04:04.496"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.497" endtime="20230712 08:04:04.500"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.479" endtime="20230712 08:04:04.500"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_142")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.517" level="INFO">${text} = 571298821
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.503" endtime="20230712 08:04:04.518"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.525" level="INFO">${textcaseno} = 571298821</msg>
+<status status="PASS" starttime="20230712 08:04:04.519" endtime="20230712 08:04:04.525"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.527" endtime="20230712 08:04:04.529"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.501" endtime="20230712 08:04:04.531"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f8e65a0cc442273f41328aa8ecf2026", element="E88E16B8EFBE713A508B7A4CCC04265A_element_143")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:04.554" level="INFO">${text} = 451298822
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:04:04.535" endtime="20230712 08:04:04.555"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:04:04.563" level="INFO">${textcaseno} = 451298822</msg>
+<status status="PASS" starttime="20230712 08:04:04.556" endtime="20230712 08:04:04.564"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${casenumber}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: case number should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:04:04.566" endtime="20230712 08:04:04.569"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.533" endtime="20230712 08:04:04.570"/>
+</iter>
+<status status="PASS" starttime="20230712 08:04:03.903" endtime="20230712 08:04:04.571"/>
+</for>
+<status status="PASS" starttime="20230712 08:03:54.719" endtime="20230712 08:04:04.572"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${casenumber}- Done End to End Automation of Test Scenario 3</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:04:04.576" endtime="20230712 08:04:04.581"/>
+</kw>
+<kw name="Go to evident staging" library="Globalkeywords">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${Url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 08:04:04.590" level="INFO">Opening browser 'edge' to base url 'https://stagingevidentdigital.xyz/'.</msg>
+<msg timestamp="20230712 08:04:04.622" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230712 08:04:04.586" endtime="20230712 08:04:20.305"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>100s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 08:04:20.306" endtime="20230712 08:04:20.314"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230712 08:04:20.315" endtime="20230712 08:04:20.443"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:04.583" endtime="20230712 08:04:20.445"/>
+</kw>
+<kw name="Login new lab user account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:20.455" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a'.</msg>
+<status status="PASS" starttime="20230712 08:04:20.452" endtime="20230712 08:04:30.015"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:30.022" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 08:04:30.017" endtime="20230712 08:04:30.163"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:30.165" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 08:04:30.163" endtime="20230712 08:04:30.234"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:04:30.236" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 08:04:30.234" endtime="20230712 08:05:36.358"/>
+</kw>
+<status status="PASS" starttime="20230712 08:04:20.449" endtime="20230712 08:05:36.359"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="search-input-cases"]</arg>
+<arg>timeout=200s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:05:36.361" endtime="20230712 08:05:36.419"/>
+</kw>
+<kw name="Upload multiple files" library="Globalkeywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="case-management-page"]/div[2]/div[2]/div[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:05:36.424" endtime="20230712 08:05:36.478"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/multi1.jfif \n C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/multi2.jfif \n C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/multi3.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:05:36.483" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\multi1.jfif 
+ C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\multi2.jfif 
+ C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\multi3.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:05:36.479" endtime="20230712 08:05:36.581"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:05:46.586" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230712 08:05:36.584" endtime="20230712 08:05:46.586"/>
+</kw>
+<status status="PASS" starttime="20230712 08:05:36.421" endtime="20230712 08:05:46.587"/>
+</kw>
+<kw name=" close support pop up modal" library="Globalkeywords">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${supportpop1}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:05:46.627" level="INFO">Current page contains element 'xpath=//*[@id="hubspot-conversations-iframe"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:46.598" endtime="20230712 08:05:46.628"/>
+</kw>
+<msg timestamp="20230712 08:05:46.628" level="INFO">${supportpop1} = True</msg>
+<status status="PASS" starttime="20230712 08:05:46.594" endtime="20230712 08:05:46.629"/>
+</kw>
+<if>
+<branch type="IF" condition="${supportpop1} == ${True}">
+<kw name="Select Frame" library="Selenium2Library">
+<arg>xpath=//*[@id="hubspot-conversations-iframe"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230712 08:05:46.634" level="INFO">Selecting frame 'xpath=//*[@id="hubspot-conversations-iframe"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:46.631" endtime="20230712 08:05:46.669"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${supportpop}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:05:46.683" level="INFO">Current page contains element 'xpath=//*[@id="welcome-message"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:46.671" endtime="20230712 08:05:46.683"/>
+</kw>
+<msg timestamp="20230712 08:05:46.684" level="INFO">${supportpop} = True</msg>
+<status status="PASS" starttime="20230712 08:05:46.670" endtime="20230712 08:05:46.684"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${supportpop}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:05:46.685" endtime="20230712 08:05:46.687"/>
+</kw>
+<if>
+<branch type="IF" condition="${supportpop} == ${True}">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="welcome-message"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:46.690" level="INFO">Clicking element 'xpath=//*[@id="welcome-message"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:46.689" endtime="20230712 08:05:46.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:05:47.293" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20230712 08:05:46.790" endtime="20230712 08:05:47.294"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:47.304" level="INFO">Clicking element 'xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button'.</msg>
+<status status="PASS" starttime="20230712 08:05:47.296" endtime="20230712 08:05:47.487"/>
+</kw>
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230712 08:05:47.488" endtime="20230712 08:05:47.496"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:05:48.499" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:05:47.496" endtime="20230712 08:05:48.499"/>
+</kw>
+<status status="PASS" starttime="20230712 08:05:46.688" endtime="20230712 08:05:48.500"/>
+</branch>
+<branch type="ELSE">
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230712 08:05:48.502" endtime="20230712 08:05:48.503"/>
+</kw>
+<status status="NOT RUN" starttime="20230712 08:05:48.500" endtime="20230712 08:05:48.504"/>
+</branch>
+<status status="PASS" starttime="20230712 08:05:46.688" endtime="20230712 08:05:48.505"/>
+</if>
+<status status="PASS" starttime="20230712 08:05:46.629" endtime="20230712 08:05:48.505"/>
+</branch>
+<branch type="ELSE">
+<kw name="Unselect Frame" library="Selenium2Library">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230712 08:05:48.506" endtime="20230712 08:05:48.507"/>
+</kw>
+<status status="NOT RUN" starttime="20230712 08:05:48.505" endtime="20230712 08:05:48.508"/>
+</branch>
+<status status="PASS" starttime="20230712 08:05:46.629" endtime="20230712 08:05:48.508"/>
+</if>
+<status status="PASS" starttime="20230712 08:05:46.590" endtime="20230712 08:05:48.509"/>
+</kw>
+<kw name="submit multiple files" library="Globalkeywords">
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>xpath=//*[@id="uia-draft-file-table-rows"]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:05:48.544" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="0364C65A0BDAEBE6B2010AD9CAA0C596_element_72")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230712 08:05:48.515" endtime="20230712 08:05:48.546"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230712 08:05:48.549" level="INFO">Length is 25</msg>
+<msg timestamp="20230712 08:05:48.549" level="INFO">${length} = 25</msg>
+<status status="PASS" starttime="20230712 08:05:48.547" endtime="20230712 08:05:48.550"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${1_uploaded}</var>
+<arg>${length} - 3</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.554" level="INFO">${1_uploaded} = 22</msg>
+<status status="PASS" starttime="20230712 08:05:48.550" endtime="20230712 08:05:48.555"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${2_uploaded}</var>
+<arg>${length} - 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.558" level="INFO">${2_uploaded} = 23</msg>
+<status status="PASS" starttime="20230712 08:05:48.556" endtime="20230712 08:05:48.559"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${3_uploaded}</var>
+<arg>${length} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.563" level="INFO">${3_uploaded} = 24</msg>
+<status status="PASS" starttime="20230712 08:05:48.560" endtime="20230712 08:05:48.563"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${design_dropdown1}</var>
+<arg>${1_uploaded} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.567" level="INFO">${design_dropdown1} = 23</msg>
+<status status="PASS" starttime="20230712 08:05:48.564" endtime="20230712 08:05:48.568"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${design_dropdown2}</var>
+<arg>${2_uploaded} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.573" level="INFO">${design_dropdown2} = 24</msg>
+<status status="PASS" starttime="20230712 08:05:48.570" endtime="20230712 08:05:48.574"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${design_dropdown3}</var>
+<arg>${3_uploaded} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230712 08:05:48.579" level="INFO">${design_dropdown3} = 25</msg>
+<status status="PASS" starttime="20230712 08:05:48.576" endtime="20230712 08:05:48.581"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-draft-file-table-column-checkbox-${1_uploaded}"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:48.587" level="INFO">Clicking element 'xpath=//*[@id="uia-draft-file-table-column-checkbox-22"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:48.582" endtime="20230712 08:05:48.776"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-draft-file-table-column-checkbox-${2_uploaded}"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:48.779" level="INFO">Clicking element 'xpath=//*[@id="uia-draft-file-table-column-checkbox-23"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:48.777" endtime="20230712 08:05:48.972"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-draft-file-table-column-checkbox-${3_uploaded}"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:48.976" level="INFO">Clicking element 'xpath=//*[@id="uia-draft-file-table-column-checkbox-24"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:48.973" endtime="20230712 08:05:49.238"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="select-design-type-${1_uploaded}-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:49.242" level="INFO">Clicking element 'xpath=//*[@id="select-design-type-22-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:49.239" endtime="20230712 08:05:49.395"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${design_dropdown1}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:49.401" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[23]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p'.</msg>
+<status status="PASS" starttime="20230712 08:05:49.397" endtime="20230712 08:05:49.573"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkbox-crown-and-bridge-${1_uploaded}-0-0"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:49.576" level="INFO">Clicking element 'xpath=//*[@id="checkbox-crown-and-bridge-22-0-0"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:49.574" endtime="20230712 08:05:49.761"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${1_uploaded}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:49.767" level="INFO">Clicking element 'xpath=//*[@id="instruction-22"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:49.762" endtime="20230712 08:05:50.024"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="units-${1_uploaded}-0"]</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:50.027" level="INFO">Typing text '1' into text field 'xpath=//*[@id="units-22-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:50.025" endtime="20230712 08:05:50.355"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="position-${1_uploaded}-0"]</arg>
+<arg>Anterior</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:50.361" level="INFO">Selecting options from selection list 'xpath=//*[@id="position-22-0"]' by label Anterior.</msg>
+<status status="PASS" starttime="20230712 08:05:50.357" endtime="20230712 08:05:50.573"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="scannerType-${1_uploaded}"]</arg>
+<arg>3Shape</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:50.577" level="INFO">Selecting options from selection list 'xpath=//*[@id="scannerType-22"]' by label 3Shape.</msg>
+<status status="PASS" starttime="20230712 08:05:50.575" endtime="20230712 08:05:50.660"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${1_uploaded}"]</arg>
+<arg>first file</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:50.664" level="INFO">Typing text 'first file' into text field 'xpath=//*[@id="instruction-22"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:50.661" endtime="20230712 08:05:51.059"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="select-design-type-${2_uploaded}-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:51.062" level="INFO">Clicking element 'xpath=//*[@id="select-design-type-23-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:51.060" endtime="20230712 08:05:51.160"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${design_dropdown2}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:51.165" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[24]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p'.</msg>
+<status status="PASS" starttime="20230712 08:05:51.162" endtime="20230712 08:05:51.340"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkbox-crown-and-bridge-${2_uploaded}-0-0"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:51.345" level="INFO">Clicking element 'xpath=//*[@id="checkbox-crown-and-bridge-23-0-0"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:51.341" endtime="20230712 08:05:51.507"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${2_uploaded}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:51.513" level="INFO">Clicking element 'xpath=//*[@id="instruction-23"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:51.509" endtime="20230712 08:05:51.706"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="units-${2_uploaded}-0"]</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:51.708" level="INFO">Typing text '1' into text field 'xpath=//*[@id="units-23-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:51.706" endtime="20230712 08:05:51.893"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="position-${2_uploaded}-0"]</arg>
+<arg>Anterior</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:51.900" level="INFO">Selecting options from selection list 'xpath=//*[@id="position-23-0"]' by label Anterior.</msg>
+<status status="PASS" starttime="20230712 08:05:51.894" endtime="20230712 08:05:52.068"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="scannerType-${2_uploaded}"]</arg>
+<arg>3Shape</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:52.072" level="INFO">Selecting options from selection list 'xpath=//*[@id="scannerType-23"]' by label 3Shape.</msg>
+<status status="PASS" starttime="20230712 08:05:52.069" endtime="20230712 08:05:52.162"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${2_uploaded}"]</arg>
+<arg>Second file</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:52.169" level="INFO">Typing text 'Second file' into text field 'xpath=//*[@id="instruction-23"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:52.164" endtime="20230712 08:05:52.586"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="select-design-type-${3_uploaded}-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:52.590" level="INFO">Clicking element 'xpath=//*[@id="select-design-type-24-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:52.587" endtime="20230712 08:05:52.706"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${design_dropdown3}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:52.710" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[25]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p'.</msg>
+<status status="PASS" starttime="20230712 08:05:52.708" endtime="20230712 08:05:52.904"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkbox-crown-and-bridge-${3_uploaded}-0-0"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:52.908" level="INFO">Clicking element 'xpath=//*[@id="checkbox-crown-and-bridge-24-0-0"]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:05:52.905" endtime="20230712 08:05:53.114"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${3_uploaded}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:53.118" level="INFO">Clicking element 'xpath=//*[@id="instruction-24"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:53.116" endtime="20230712 08:05:53.304"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="units-${3_uploaded}-0"]</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:53.308" level="INFO">Typing text '1' into text field 'xpath=//*[@id="units-24-0"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:53.305" endtime="20230712 08:05:53.547"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="position-${3_uploaded}-0"]</arg>
+<arg>Anterior</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:53.553" level="INFO">Selecting options from selection list 'xpath=//*[@id="position-24-0"]' by label Anterior.</msg>
+<status status="PASS" starttime="20230712 08:05:53.549" endtime="20230712 08:05:53.729"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="scannerType-${3_uploaded}"]</arg>
+<arg>3Shape</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230712 08:05:53.734" level="INFO">Selecting options from selection list 'xpath=//*[@id="scannerType-24"]' by label 3Shape.</msg>
+<status status="PASS" starttime="20230712 08:05:53.731" endtime="20230712 08:05:53.828"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-${3_uploaded}"]</arg>
+<arg>third file</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:53.833" level="INFO">Typing text 'third file' into text field 'xpath=//*[@id="instruction-24"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:53.829" endtime="20230712 08:05:54.227"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-submit-all-btn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:05:54.231" level="INFO">Clicking element 'xpath=//*[@id="uia-submit-all-btn"]'.</msg>
+<status status="PASS" starttime="20230712 08:05:54.228" endtime="20230712 08:05:54.346"/>
+</kw>
+<status status="PASS" starttime="20230712 08:05:48.511" endtime="20230712 08:05:54.348"/>
+</kw>
+<kw name="Check and copy submitted Cases" library="Globalkeywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<arg>to wait submittion of case</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:06:04.354" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20230712 08:06:04.355" level="INFO">to wait submittion of case</msg>
+<status status="PASS" starttime="20230712 08:05:54.353" endtime="20230712 08:06:04.356"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:06:04.359" endtime="20230712 08:06:04.679"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:04.681" level="INFO">Clicking element 'xpath=//*[@id="close-wrapper"]'.</msg>
+<status status="PASS" starttime="20230712 08:06:04.680" endtime="20230712 08:06:04.826"/>
+</kw>
+<status status="PASS" starttime="20230712 08:05:54.349" endtime="20230712 08:06:04.827"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber1}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.416" level="INFO">${casenumber1} = 571298982</msg>
+<status status="PASS" starttime="20230712 08:06:04.830" endtime="20230712 08:06:05.416"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber2}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[2]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.450" level="INFO">${casenumber2} = 891298981</msg>
+<status status="PASS" starttime="20230712 08:06:05.418" endtime="20230712 08:06:05.451"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber3}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[3]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.490" level="INFO">${casenumber3} = 801298980</msg>
+<status status="PASS" starttime="20230712 08:06:05.454" endtime="20230712 08:06:05.490"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno1}</var>
+<arg>${casenumber1}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230712 08:06:05.493" level="INFO">${checkcaseno1} = 571298982</msg>
+<status status="PASS" starttime="20230712 08:06:05.491" endtime="20230712 08:06:05.494"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno2}</var>
+<arg>${casenumber2}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230712 08:06:05.498" level="INFO">${checkcaseno2} = 891298981</msg>
+<status status="PASS" starttime="20230712 08:06:05.497" endtime="20230712 08:06:05.499"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno3}</var>
+<arg>${casenumber3}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230712 08:06:05.502" level="INFO">${checkcaseno3} = 801298980</msg>
+<status status="PASS" starttime="20230712 08:06:05.500" endtime="20230712 08:06:05.503"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${checkcaseno1} ${checkcaseno2} ${checkcaseno3}</arg>
+<arg>These are the case numbers</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:06:05.505" endtime="20230712 08:06:05.508"/>
+</kw>
+<kw name="Log out lab account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.518" level="INFO">Clicking element 'xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div'.</msg>
+<status status="PASS" starttime="20230712 08:06:05.515" endtime="20230712 08:06:05.612"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.615" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230712 08:06:05.614" endtime="20230712 08:06:05.697"/>
+</kw>
+<status status="PASS" starttime="20230712 08:06:05.510" endtime="20230712 08:06:05.699"/>
+</kw>
+<kw name="Login Designer account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:05.703" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230712 08:06:05.702" endtime="20230712 08:06:21.244"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${edusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:21.250" level="INFO">Typing text 'design@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 08:06:21.246" endtime="20230712 08:06:21.361"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${edpassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:21.365" level="INFO">Typing text 'password1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 08:06:21.363" endtime="20230712 08:06:21.446"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:06:21.449" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 08:06:21.447" endtime="20230712 08:07:13.397"/>
+</kw>
+<status status="PASS" starttime="20230712 08:06:05.700" endtime="20230712 08:07:13.398"/>
+</kw>
+<kw name="Process the multiple cases submitted" library="Globalkeywords">
+<arg>${checkcaseno1}</arg>
+<arg>${checkcaseno2}</arg>
+<arg>${checkcaseno3}</arg>
+<arg>${labname}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:16.402" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:13.401" endtime="20230712 08:07:16.405"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-allcases"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:16.412" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-allcases"]'.</msg>
+<status status="PASS" starttime="20230712 08:07:16.407" endtime="20230712 08:07:16.578"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:18.581" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:16.579" endtime="20230712 08:07:18.582"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${checkcaseno1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:18.589" level="INFO">Clicking element 'class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-571298982'.</msg>
+<status status="PASS" starttime="20230712 08:07:18.584" endtime="20230712 08:07:25.814"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:27.818" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:25.817" endtime="20230712 08:07:27.819"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigned"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:27.825" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-assigned"]'.</msg>
+<status status="PASS" starttime="20230712 08:07:27.821" endtime="20230712 08:07:27.974"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:29.975" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:27.975" endtime="20230712 08:07:29.976"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno1}"]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:29.983" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_571298982"]/td[10]/div[2]/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230712 08:07:29.978" endtime="20230712 08:07:30.221"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait to download files</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:45.224" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:07:45.225" level="INFO">wait to download files</msg>
+<status status="PASS" starttime="20230712 08:07:30.223" endtime="20230712 08:07:45.226"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:07:45.237" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:07:45.231" endtime="20230712 08:07:45.252"/>
+</kw>
+<status status="PASS" starttime="20230712 08:07:45.228" endtime="20230712 08:07:45.253"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-inprogress"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:45.256" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-inprogress"]'.</msg>
+<status status="PASS" starttime="20230712 08:07:45.254" endtime="20230712 08:07:45.424"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno1}"]/td[10]/div[3]/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:45.429" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_571298982"]/td[10]/div[3]/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230712 08:07:45.427" endtime="20230712 08:07:47.249"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/design1.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:07:47.252" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\design1.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:07:47.251" endtime="20230712 08:07:47.378"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:49.379" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:47.378" endtime="20230712 08:07:49.380"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>class=remove_file.ng-scope</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:07:49.382" endtime="20230712 08:07:49.428"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:50.431" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:07:49.429" endtime="20230712 08:07:50.434"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:50.440" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-submit"]'.</msg>
+<status status="PASS" starttime="20230712 08:07:50.435" endtime="20230712 08:07:50.587"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:07:52.589" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:07:50.587" endtime="20230712 08:07:52.590"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="submit-design-modal"]/div[1]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:52.597" level="INFO">Clicking element 'xpath=//*[@id="submit-design-modal"]/div[1]/img'.</msg>
+<status status="PASS" starttime="20230712 08:07:52.593" endtime="20230712 08:07:52.755"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-allcases"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:07:52.757" endtime="20230712 08:07:53.071"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-allcases"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:53.077" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-allcases"]'.</msg>
+<status status="PASS" starttime="20230712 08:07:53.073" endtime="20230712 08:07:53.179"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${checkcaseno2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:07:53.185" level="INFO">Clicking element 'class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-891298981'.</msg>
+<status status="PASS" starttime="20230712 08:07:53.182" endtime="20230712 08:08:03.563"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:05.569" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:03.565" endtime="20230712 08:08:05.570"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigned"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230712 08:08:05.572" endtime="20230712 08:08:05.893"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigned"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:05.900" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-assigned"]'.</msg>
+<status status="PASS" starttime="20230712 08:08:05.895" endtime="20230712 08:08:06.120"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:08.122" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:06.122" endtime="20230712 08:08:08.124"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno2}"]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:08.131" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_891298981"]/td[10]/div[2]/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230712 08:08:08.126" endtime="20230712 08:08:08.355"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait to download files</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:23.359" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:08:23.361" level="INFO">wait to download files</msg>
+<status status="PASS" starttime="20230712 08:08:08.357" endtime="20230712 08:08:23.363"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:08:23.372" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:08:23.367" endtime="20230712 08:08:23.387"/>
+</kw>
+<status status="PASS" starttime="20230712 08:08:23.364" endtime="20230712 08:08:23.388"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-inprogress"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:23.394" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-inprogress"]'.</msg>
+<status status="PASS" starttime="20230712 08:08:23.390" endtime="20230712 08:08:23.558"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno2}"]/td[10]/div[3]/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:23.565" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_891298981"]/td[10]/div[3]/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230712 08:08:23.560" endtime="20230712 08:08:25.830"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/design2.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:08:25.838" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\design2.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:08:25.832" endtime="20230712 08:08:25.969"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:27.972" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:25.970" endtime="20230712 08:08:27.973"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>class=remove_file.ng-scope</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:08:27.975" endtime="20230712 08:08:28.020"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:30.023" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:28.021" endtime="20230712 08:08:30.024"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:30.033" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-submit"]'.</msg>
+<status status="PASS" starttime="20230712 08:08:30.026" endtime="20230712 08:08:30.179"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:31.183" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230712 08:08:30.180" endtime="20230712 08:08:31.184"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="submit-design-modal"]/div[1]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:31.187" level="INFO">Clicking element 'xpath=//*[@id="submit-design-modal"]/div[1]/img'.</msg>
+<status status="PASS" starttime="20230712 08:08:31.184" endtime="20230712 08:08:31.361"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:32.866" level="INFO">Slept 1 second 500 milliseconds</msg>
+<status status="PASS" starttime="20230712 08:08:31.363" endtime="20230712 08:08:32.866"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:08:32.872" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:08:32.868" endtime="20230712 08:08:32.886"/>
+</kw>
+<status status="PASS" starttime="20230712 08:08:32.867" endtime="20230712 08:08:32.886"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-allcases"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:32.889" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-allcases"]'.</msg>
+<status status="PASS" starttime="20230712 08:08:32.887" endtime="20230712 08:08:33.023"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${checkcaseno3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:33.027" level="INFO">Clicking element 'class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-801298980'.</msg>
+<status status="PASS" starttime="20230712 08:08:33.024" endtime="20230712 08:08:42.289"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:44.293" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:42.290" endtime="20230712 08:08:44.295"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:08:46.299" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:08:44.297" endtime="20230712 08:08:46.300"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno3}"]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:08:46.307" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_801298980"]/td[10]/div[2]/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230712 08:08:46.302" endtime="20230712 08:08:46.534"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait to download files</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:09:01.536" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:09:01.537" level="INFO">wait to download files</msg>
+<status status="PASS" starttime="20230712 08:08:46.535" endtime="20230712 08:09:01.538"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:09:01.548" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:09:01.544" endtime="20230712 08:09:01.565"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:01.540" endtime="20230712 08:09:01.567"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-inprogress"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:01.569" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-inprogress"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:01.568" endtime="20230712 08:09:01.719"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${checkcaseno3}"]/td[10]/div[3]/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:01.725" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_801298980"]/td[10]/div[3]/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230712 08:09:01.720" endtime="20230712 08:09:05.437"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Evident Automation\\Evident Design Test Automation/design3.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230712 08:09:05.443" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Evident Automation\Evident Design Test Automation\design3.jfif to browser.</msg>
+<status status="PASS" starttime="20230712 08:09:05.439" endtime="20230712 08:09:05.599"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:09:07.602" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:09:05.600" endtime="20230712 08:09:07.604"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>class=remove_file.ng-scope</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:09:07.606" endtime="20230712 08:09:07.647"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:09:09.649" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:09:07.647" endtime="20230712 08:09:09.650"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:09.656" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-submit"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:09.652" endtime="20230712 08:09:09.801"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:09:11.803" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230712 08:09:09.802" endtime="20230712 08:09:11.805"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="submit-design-modal"]/div[1]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:11.812" level="INFO">Clicking element 'xpath=//*[@id="submit-design-modal"]/div[1]/img'.</msg>
+<status status="PASS" starttime="20230712 08:09:11.807" endtime="20230712 08:09:11.970"/>
+</kw>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230712 08:09:11.972" endtime="20230712 08:09:14.052"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:09:14.063" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:09:14.057" endtime="20230712 08:09:14.076"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:14.055" endtime="20230712 08:09:14.077"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-completed"]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:14.083" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-completed"]/div'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.079" endtime="20230712 08:09:14.190"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${casesucompleted1}</var>
+<arg>Page Should Contain</arg>
+<arg>${checkcaseno1}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${checkcaseno1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230712 08:09:14.726" level="INFO">Current page contains text '571298982'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.194" endtime="20230712 08:09:14.727"/>
+</kw>
+<msg timestamp="20230712 08:09:14.728" level="INFO">${casesucompleted1} = True</msg>
+<status status="PASS" starttime="20230712 08:09:14.192" endtime="20230712 08:09:14.728"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${casesucompleted2}</var>
+<arg>Page Should Contain</arg>
+<arg>${checkcaseno2}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${checkcaseno2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230712 08:09:14.766" level="INFO">Current page contains text '891298981'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.731" endtime="20230712 08:09:14.767"/>
+</kw>
+<msg timestamp="20230712 08:09:14.767" level="INFO">${casesucompleted2} = True</msg>
+<status status="PASS" starttime="20230712 08:09:14.730" endtime="20230712 08:09:14.767"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${casesucompleted3}</var>
+<arg>Page Should Contain</arg>
+<arg>${Checkcaseno3}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${Checkcaseno3}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230712 08:09:14.800" level="INFO">Current page contains text '801298980'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.769" endtime="20230712 08:09:14.801"/>
+</kw>
+<msg timestamp="20230712 08:09:14.803" level="INFO">${casesucompleted3} = True</msg>
+<status status="PASS" starttime="20230712 08:09:14.768" endtime="20230712 08:09:14.803"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${casesucompleted1}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:14.805" endtime="20230712 08:09:14.807"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${casesucompleted2}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:14.809" endtime="20230712 08:09:14.811"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${casesucompleted3}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:14.812" endtime="20230712 08:09:14.813"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${casesucompleted1},${casesucompleted2} and ${casesucompleted3} are completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:09:14.814" endtime="20230712 08:09:14.817"/>
+</kw>
+<status status="PASS" starttime="20230712 08:07:13.399" endtime="20230712 08:09:14.818"/>
+</kw>
+<kw name="Logout designer account" library="Globalkeywords">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:09:14.825" endtime="20230712 08:09:14.859"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:14.863" level="INFO">Clicking element 'xpath=//*[@id="single-button"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.860" endtime="20230712 08:09:14.943"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:14.947" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:14.944" endtime="20230712 08:09:15.011"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:14.821" endtime="20230712 08:09:15.012"/>
+</kw>
+<kw name="Relogin new lab user account" library="Globalkeywords">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:15.016" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230712 08:09:15.015" endtime="20230712 08:09:29.480"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${nuseremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:29.483" level="INFO">Typing text 'labtestautomation1689119907@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:29.480" endtime="20230712 08:09:29.636"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:29.640" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:29.637" endtime="20230712 08:09:29.713"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:29.715" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230712 08:09:29.714" endtime="20230712 08:09:30.879"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:15.014" endtime="20230712 08:09:30.879"/>
+</kw>
+<kw name="Search and check if the cases are completed" library="Globalkeywords">
+<arg>${casenumber1}</arg>
+<arg>${casenumber2}</arg>
+<arg>${casenumber3}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-filter"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:30.888" level="INFO">Clicking element 'xpath=//*[@id="ed-completed-filter"]'.</msg>
+<status status="PASS" starttime="20230712 08:09:30.883" endtime="20230712 08:09:51.395"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${case1completed}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="checkCases_No_${completedcase1}"]/td[2]/div[1]/p[1]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase1}"]/td[2]/div[1]/p[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:09:51.578" level="INFO">Current page contains element 'xpath=//*[@id="checkCases_No_571298982"]/td[2]/div[1]/p[1]'.</msg>
+<status status="PASS" starttime="20230712 08:09:51.400" endtime="20230712 08:09:51.578"/>
+</kw>
+<msg timestamp="20230712 08:09:51.579" level="INFO">${case1completed} = True</msg>
+<status status="PASS" starttime="20230712 08:09:51.397" endtime="20230712 08:09:51.580"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${case2completed}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="checkCases_No_${completedcase2}"]/td[2]/div[1]/p[1]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase2}"]/td[2]/div[1]/p[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:09:51.628" level="INFO">Current page contains element 'xpath=//*[@id="checkCases_No_891298981"]/td[2]/div[1]/p[1]'.</msg>
+<status status="PASS" starttime="20230712 08:09:51.584" endtime="20230712 08:09:51.629"/>
+</kw>
+<msg timestamp="20230712 08:09:51.630" level="INFO">${case2completed} = True</msg>
+<status status="PASS" starttime="20230712 08:09:51.581" endtime="20230712 08:09:51.630"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${case3completed}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//*[@id="checkCases_No_${completedcase3}"]/td[2]/div[1]/p[1]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase3}"]/td[2]/div[1]/p[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230712 08:09:51.670" level="INFO">Current page contains element 'xpath=//*[@id="checkCases_No_801298980"]/td[2]/div[1]/p[1]'.</msg>
+<status status="PASS" starttime="20230712 08:09:51.635" endtime="20230712 08:09:51.671"/>
+</kw>
+<msg timestamp="20230712 08:09:51.672" level="INFO">${case3completed} = True</msg>
+<status status="PASS" starttime="20230712 08:09:51.632" endtime="20230712 08:09:51.673"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${case1completed}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:51.674" endtime="20230712 08:09:51.675"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${case2completed}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:51.676" endtime="20230712 08:09:51.678"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${case3completed}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230712 08:09:51.679" endtime="20230712 08:09:51.680"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${completedcase1},${completedcase2} and ${completedcase3} are completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:09:51.681" endtime="20230712 08:09:51.698"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:30.881" endtime="20230712 08:09:51.699"/>
+</kw>
+<kw name="download the design file of multiple files completed" library="Globalkeywords">
+<arg>${casenumber1}</arg>
+<arg>${casenumber2}</arg>
+<arg>${casenumber3}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase1}"]/td[7]/div[3]/div[2]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:09:51.708" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_571298982"]/td[7]/div[3]/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:09:51.705" endtime="20230712 08:09:51.850"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait for the file to download</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:10:06.853" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:10:06.854" level="INFO">wait for the file to download</msg>
+<status status="PASS" starttime="20230712 08:09:51.851" endtime="20230712 08:10:06.855"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase2}"]/td[7]/div[3]/div[2]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:06.863" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_891298981"]/td[7]/div[3]/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:10:06.858" endtime="20230712 08:10:07.003"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<arg>wait for the file to download</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:10:22.006" level="INFO">Slept 15 seconds</msg>
+<msg timestamp="20230712 08:10:22.007" level="INFO">wait for the file to download</msg>
+<status status="PASS" starttime="20230712 08:10:07.003" endtime="20230712 08:10:22.008"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkCases_No_${completedcase3}"]/td[7]/div[3]/div[2]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:22.016" level="INFO">Clicking element 'xpath=//*[@id="checkCases_No_801298980"]/td[7]/div[3]/div[2]/div[1]'.</msg>
+<status status="PASS" starttime="20230712 08:10:22.010" endtime="20230712 08:10:22.164"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>25s</arg>
+<arg>wait for the file to download</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230712 08:10:47.167" level="INFO">Slept 25 seconds</msg>
+<msg timestamp="20230712 08:10:47.168" level="INFO">wait for the file to download</msg>
+<status status="PASS" starttime="20230712 08:10:22.165" endtime="20230712 08:10:47.169"/>
+</kw>
+<status status="PASS" starttime="20230712 08:09:51.701" endtime="20230712 08:10:47.170"/>
+</kw>
+<kw name="Check if the cases are removed from not yet downloaded" library="Globalkeywords">
+<arg>${casenumber1}</arg>
+<arg>${casenumber2}</arg>
+<arg>${casenumber3}</arg>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230712 08:10:47.181" endtime="20230712 08:10:48.059"/>
+</kw>
+<kw name="Scroll to top" library="Globalkeywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230712 08:10:48.067" level="INFO">Executing JavaScript:
+window.scrollTo(0, 0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230712 08:10:48.062" endtime="20230712 08:10:48.079"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.060" endtime="20230712 08:10:48.080"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 08:10:48.081" endtime="20230712 08:10:48.121"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.127" level="INFO">Clicking element 'xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]'.</msg>
+<status status="PASS" starttime="20230712 08:10:48.123" endtime="20230712 08:10:48.221"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>css=.ed-case-no.row-word-break</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.461" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20230712 08:10:48.223" endtime="20230712 08:10:48.462"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.503" level="INFO">${text} = 891298963
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.466" endtime="20230712 08:10:48.504"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.507" level="INFO">${textcaseno} = 891298963</msg>
+<status status="PASS" starttime="20230712 08:10:48.505" endtime="20230712 08:10:48.508"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.509" endtime="20230712 08:10:48.512"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.465" endtime="20230712 08:10:48.512"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_114")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.536" level="INFO">${text} = 791298955
+Files:
+download.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.515" endtime="20230712 08:10:48.536"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.541" level="INFO">${textcaseno} = 791298955</msg>
+<status status="PASS" starttime="20230712 08:10:48.537" endtime="20230712 08:10:48.542"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.543" endtime="20230712 08:10:48.545"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.513" endtime="20230712 08:10:48.547"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_115")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.564" level="INFO">${text} = 461298967
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.548" endtime="20230712 08:10:48.565"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.568" level="INFO">${textcaseno} = 461298967</msg>
+<status status="PASS" starttime="20230712 08:10:48.566" endtime="20230712 08:10:48.568"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.570" endtime="20230712 08:10:48.571"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.547" endtime="20230712 08:10:48.571"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_116")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.588" level="INFO">${text} = 101298968
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.572" endtime="20230712 08:10:48.589"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.591" level="INFO">${textcaseno} = 101298968</msg>
+<status status="PASS" starttime="20230712 08:10:48.589" endtime="20230712 08:10:48.593"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.595" endtime="20230712 08:10:48.596"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.571" endtime="20230712 08:10:48.597"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_117")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.612" level="INFO">${text} = 451298969
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.599" endtime="20230712 08:10:48.612"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.615" level="INFO">${textcaseno} = 451298969</msg>
+<status status="PASS" starttime="20230712 08:10:48.613" endtime="20230712 08:10:48.616"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.616" endtime="20230712 08:10:48.617"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.597" endtime="20230712 08:10:48.618"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_118")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.632" level="INFO">${text} = 441298964
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.619" endtime="20230712 08:10:48.632"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.636" level="INFO">${textcaseno} = 441298964</msg>
+<status status="PASS" starttime="20230712 08:10:48.633" endtime="20230712 08:10:48.637"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.637" endtime="20230712 08:10:48.638"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.618" endtime="20230712 08:10:48.639"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_119")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.654" level="INFO">${text} = 161298965
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.640" endtime="20230712 08:10:48.654"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.657" level="INFO">${textcaseno} = 161298965</msg>
+<status status="PASS" starttime="20230712 08:10:48.655" endtime="20230712 08:10:48.657"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase1}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase1} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.658" endtime="20230712 08:10:48.659"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.639" endtime="20230712 08:10:48.660"/>
+</iter>
+<status status="PASS" starttime="20230712 08:10:48.463" endtime="20230712 08:10:48.661"/>
+</for>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>css=.ed-case-no.row-word-break</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.671" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20230712 08:10:48.662" endtime="20230712 08:10:48.671"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.687" level="INFO">${text} = 891298963
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.674" endtime="20230712 08:10:48.687"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.690" level="INFO">${textcaseno} = 891298963</msg>
+<status status="PASS" starttime="20230712 08:10:48.688" endtime="20230712 08:10:48.690"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.691" endtime="20230712 08:10:48.692"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.673" endtime="20230712 08:10:48.693"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_114")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.706" level="INFO">${text} = 791298955
+Files:
+download.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.695" endtime="20230712 08:10:48.707"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.711" level="INFO">${textcaseno} = 791298955</msg>
+<status status="PASS" starttime="20230712 08:10:48.707" endtime="20230712 08:10:48.711"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.712" endtime="20230712 08:10:48.713"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.694" endtime="20230712 08:10:48.714"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_115")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.728" level="INFO">${text} = 461298967
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.715" endtime="20230712 08:10:48.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.731" level="INFO">${textcaseno} = 461298967</msg>
+<status status="PASS" starttime="20230712 08:10:48.729" endtime="20230712 08:10:48.731"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.732" endtime="20230712 08:10:48.732"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.714" endtime="20230712 08:10:48.733"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_116")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.745" level="INFO">${text} = 101298968
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.734" endtime="20230712 08:10:48.746"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.748" level="INFO">${textcaseno} = 101298968</msg>
+<status status="PASS" starttime="20230712 08:10:48.746" endtime="20230712 08:10:48.749"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.749" endtime="20230712 08:10:48.750"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.733" endtime="20230712 08:10:48.750"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_117")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.768" level="INFO">${text} = 451298969
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.751" endtime="20230712 08:10:48.769"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.774" level="INFO">${textcaseno} = 451298969</msg>
+<status status="PASS" starttime="20230712 08:10:48.770" endtime="20230712 08:10:48.775"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.776" endtime="20230712 08:10:48.778"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.751" endtime="20230712 08:10:48.779"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_118")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.893" level="INFO">${text} = 441298964
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.781" endtime="20230712 08:10:48.895"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.897" level="INFO">${textcaseno} = 441298964</msg>
+<status status="PASS" starttime="20230712 08:10:48.895" endtime="20230712 08:10:48.897"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.898" endtime="20230712 08:10:48.899"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.779" endtime="20230712 08:10:48.899"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_119")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.915" level="INFO">${text} = 161298965
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.900" endtime="20230712 08:10:48.916"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.920" level="INFO">${textcaseno} = 161298965</msg>
+<status status="PASS" starttime="20230712 08:10:48.917" endtime="20230712 08:10:48.921"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase2}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase2} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.922" endtime="20230712 08:10:48.922"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.899" endtime="20230712 08:10:48.923"/>
+</iter>
+<status status="PASS" starttime="20230712 08:10:48.673" endtime="20230712 08:10:48.923"/>
+</for>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>css=.ed-case-no.row-word-break</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.936" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20230712 08:10:48.924" endtime="20230712 08:10:48.936"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_113")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.950" level="INFO">${text} = 891298963
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.938" endtime="20230712 08:10:48.950"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.953" level="INFO">${textcaseno} = 891298963</msg>
+<status status="PASS" starttime="20230712 08:10:48.951" endtime="20230712 08:10:48.953"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.953" endtime="20230712 08:10:48.954"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.937" endtime="20230712 08:10:48.955"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_114")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.967" level="INFO">${text} = 791298955
+Files:
+download.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.956" endtime="20230712 08:10:48.967"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.970" level="INFO">${textcaseno} = 791298955</msg>
+<status status="PASS" starttime="20230712 08:10:48.967" endtime="20230712 08:10:48.970"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.970" endtime="20230712 08:10:48.971"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.955" endtime="20230712 08:10:48.972"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_115")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:48.993" level="INFO">${text} = 461298967
+Files:
+multi1.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:48.973" endtime="20230712 08:10:48.994"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:48.997" level="INFO">${textcaseno} = 461298967</msg>
+<status status="PASS" starttime="20230712 08:10:48.995" endtime="20230712 08:10:48.998"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:48.998" endtime="20230712 08:10:48.999"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:48.972" endtime="20230712 08:10:49.000"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_116")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:49.015" level="INFO">${text} = 101298968
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:49.001" endtime="20230712 08:10:49.015"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:49.018" level="INFO">${textcaseno} = 101298968</msg>
+<status status="PASS" starttime="20230712 08:10:49.016" endtime="20230712 08:10:49.018"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:49.019" endtime="20230712 08:10:49.020"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:49.000" endtime="20230712 08:10:49.020"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_117")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:49.034" level="INFO">${text} = 451298969
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:49.021" endtime="20230712 08:10:49.034"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:49.037" level="INFO">${textcaseno} = 451298969</msg>
+<status status="PASS" starttime="20230712 08:10:49.035" endtime="20230712 08:10:49.037"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:49.038" endtime="20230712 08:10:49.039"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:49.020" endtime="20230712 08:10:49.039"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_118")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:49.053" level="INFO">${text} = 441298964
+Files:
+multi2.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:49.041" endtime="20230712 08:10:49.053"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:49.056" level="INFO">${textcaseno} = 441298964</msg>
+<status status="PASS" starttime="20230712 08:10:49.054" endtime="20230712 08:10:49.056"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:49.057" endtime="20230712 08:10:49.057"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:49.040" endtime="20230712 08:10:49.058"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d99f990483a970cab085e63e4c84af0f", element="071F3728E2A67BC4A24D9814E2A40A48_element_119")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230712 08:10:49.071" level="INFO">${text} = 161298965
+Files:
+multi3.jfif</msg>
+<status status="PASS" starttime="20230712 08:10:49.060" endtime="20230712 08:10:49.072"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${textcaseno}</var>
+<arg>${text[:9]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230712 08:10:49.075" level="INFO">${textcaseno} = 161298965</msg>
+<status status="PASS" starttime="20230712 08:10:49.073" endtime="20230712 08:10:49.076"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${completedcase3}' in '${textcaseno}'</arg>
+<arg>Fail</arg>
+<arg>expected result: ${completedcase3} should be removed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230712 08:10:49.077" endtime="20230712 08:10:49.078"/>
+</kw>
+<status status="PASS" starttime="20230712 08:10:49.059" endtime="20230712 08:10:49.078"/>
+</iter>
+<status status="PASS" starttime="20230712 08:10:48.937" endtime="20230712 08:10:49.079"/>
+</for>
+<status status="PASS" starttime="20230712 08:10:47.173" endtime="20230712 08:10:49.079"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${casenumber1}, ${casenumber2}, ${casenumber3}- Done End to End Automation of Test Scenario 4</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230712 08:10:49.080" endtime="20230712 08:10:49.082"/>
+</kw>
+<status status="PASS" starttime="20230712 07:57:32.551" endtime="20230712 08:10:49.083"/>
+</test>
+<doc>Evident design end to end automation</doc>
+<status status="PASS" starttime="20230712 07:57:31.686" endtime="20230712 08:10:49.087"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Use Case#1 Existing Evident Design customer - Copy">Use Case#1 Existing Evident Design customer - Copy</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

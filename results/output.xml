@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230515 10:19:35.287" rpa="false" schemaversion="3">
+<suite id="s1" name="Automation to send to Sol" source="C:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol">
+<suite id="s1-s1" name="Test Robot 05-15-23" source="C:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol\test robot 05-15-23.robot">
+<test id="s1-s1-t1" name="Evident staging index" line="27">
+<kw name="Go to evident staging">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${Url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230515 10:19:35.791" level="INFO">Opening browser 'edge' to base url 'https://stagingevidentdigital.xyz/'.</msg>
+<msg timestamp="20230515 10:19:35.796" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230515 10:19:35.790" endtime="20230515 10:20:00.895"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>25</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230515 10:20:00.895" endtime="20230515 10:20:00.897"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230515 10:20:00.897" endtime="20230515 10:20:01.024"/>
+</kw>
+<status status="PASS" starttime="20230515 10:19:35.788" endtime="20230515 10:20:01.024"/>
+</kw>
+<status status="PASS" starttime="20230515 10:19:35.785" endtime="20230515 10:20:01.025"/>
+</test>
+<test id="s1-s1-t2" name="Proceed to login page" line="30">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230515 10:20:01.028" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a'.</msg>
+<status status="PASS" starttime="20230515 10:20:01.027" endtime="20230515 10:20:05.149"/>
+</kw>
+<status status="PASS" starttime="20230515 10:20:01.026" endtime="20230515 10:20:05.150"/>
+</test>
+<test id="s1-s1-t3" name="Login with username and password" line="33">
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230515 10:20:05.154" level="INFO">Typing text 'testlab419@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230515 10:20:05.153" endtime="20230515 10:20:05.229"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230515 10:20:05.230" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230515 10:20:05.229" endtime="20230515 10:20:05.305"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230515 10:20:05.306" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230515 10:20:05.305" endtime="20230515 10:20:08.552"/>
+</kw>
+<status status="PASS" starttime="20230515 10:20:05.152" endtime="20230515 10:20:08.552"/>
+</test>
+<test id="s1-s1-t4" name="Upload a file" line="38">
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>C:\\Users\\Nimbyx\\Documents\\Robot - framework\\Automation to send to Sol/uploadfile1.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230515 10:20:08.557" level="INFO">Sending C:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol\uploadfile1.jpg to browser.</msg>
+<msg timestamp="20230515 10:20:08.561" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=113.0.1774.35)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00007FF735524AD2+67490]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BB242+782402]
+	(No symbol) [0x00007FF73525C646]
+	(No symbol) [0x00007FF73523644B]
+	(No symbol) [0x00007FF7352C1C0F]
+	(No symbol) [0x00007FF7352D64AF]
+	(No symbol) [0x00007FF7352BDD23]
+	(No symbol) [0x00007FF735292794]
+	(No symbol) [0x00007FF7352919B0]
+	(No symbol) [0x00007FF735292F04]
+	Microsoft::Applications::Events::ILogManager::DispatchEventBroadcast [0x00007FF7356E90D3+1301571]
+	(No symbol) [0x00007FF73531B951]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354046C1+33985]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7353FCAF5+2293]
+	Microsoft::Applications::Events::ILogManager::DispatchEventBroadcast [0x00007FF7356E7E33+1296803]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354C2589+811913]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BEF04+797956]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BEFFC+798204]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354B50B1+757425]
+	BaseThreadInitThunk [0x00007FF9F56B269D+29]
+	RtlUserThreadStart [0x00007FF9F652A9F8+40]
+</msg>
+<msg timestamp="20230515 10:20:08.568" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=113.0.1774.35)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00007FF735524AD2+67490]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BB242+782402]
+	(No symbol) [0x00007FF73525C646]
+	(No symbol) [0x00007FF73523644B]
+	(No symbol) [0x00007FF7352C1C0F]
+	(No symbol) [0x00007FF7352D64AF]
+	(No symbol) [0x00007FF7352BDD23]
+	(No symbol) [0x00007FF735292794]
+	(No symbol) [0x00007FF7352919B0]
+	(No symbol) [0x00007FF735292F04]
+	Microsoft::Applications::Events::ILogManager::DispatchEventBroadcast [0x00007FF7356E90D3+1301571]
+	(No symbol) [0x00007FF73531B951]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354046C1+33985]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7353FCAF5+2293]
+	Microsoft::Applications::Events::ILogManager::DispatchEventBroadcast [0x00007FF7356E7E33+1296803]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354C2589+811913]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BEF04+797956]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354BEFFC+798204]
+	Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7354B50B1+757425]
+	BaseThreadInitThunk [0x00007FF9F56B269D+29]
+	RtlUserThreadStart [0x00007FF9F652A9F8+40]
+</msg>
+<status status="FAIL" starttime="20230515 10:20:08.556" endtime="20230515 10:20:08.575"/>
+</kw>
+<status status="FAIL" starttime="20230515 10:20:08.554" endtime="20230515 10:20:08.577">

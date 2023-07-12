@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230614 14:19:52.880" rpa="false" schemaversion="3">
+<suite id="s1" name="Use Case#1 Existing Evident Design Customer" source="c:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol\evident design test automation\use case#1 existing evident design customer.robot">
+<test id="s1-t1" name="Im an existing lab customer of Design and I want to submit a case for design" line="26">
+<kw name="Go to evident staging">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${Url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230614 14:19:53.099" level="INFO">Opening browser 'edge' to base url 'https://stagingevidentdigital.xyz/'.</msg>
+<msg timestamp="20230614 14:19:53.107" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230614 14:19:53.098" endtime="20230614 14:20:17.261"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>25</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230614 14:20:17.262" endtime="20230614 14:20:17.263"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230614 14:20:17.263" endtime="20230614 14:20:17.383"/>
+</kw>
+<status status="PASS" starttime="20230614 14:19:53.098" endtime="20230614 14:20:17.383"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:20:17.388" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div/div[2]/div[3]/div/div/a'.</msg>
+<status status="PASS" starttime="20230614 14:20:17.384" endtime="20230614 14:20:25.974"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:20:25.975" level="INFO">Typing text 'testlab419@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230614 14:20:25.975" endtime="20230614 14:20:26.047"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:20:26.048" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230614 14:20:26.047" endtime="20230614 14:20:26.114"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:20:26.115" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230614 14:20:26.114" endtime="20230614 14:21:35.805"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="case-management-page"]/div[2]/div[2]/div[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230614 14:21:35.806" endtime="20230614 14:21:35.856"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>c:\\Users\\Nimbyx\\Documents\\Robot - framework\\Automation to send to Sol\\evident design test automation/download.jfif</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230614 14:21:35.861" level="INFO">Sending c:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol\evident design test automation\download.jfif to browser.</msg>
+<status status="PASS" starttime="20230614 14:21:35.858" endtime="20230614 14:21:35.935"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="select-design-type-0-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:35.937" level="INFO">Clicking element 'xpath=//*[@id="select-design-type-0-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:35.936" endtime="20230614 14:21:38.009"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="design-type-dropdown"]/div/div[1]/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:38.014" level="INFO">Clicking element 'xpath=//*[@id="design-type-dropdown"]/div/div[1]/p'.</msg>
+<status status="PASS" starttime="20230614 14:21:38.013" endtime="20230614 14:21:38.155"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="checkbox-favorites-0-0-0"]/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:38.156" level="INFO">Clicking element 'xpath=//*[@id="checkbox-favorites-0-0-0"]/div[2]'.</msg>
+<status status="PASS" starttime="20230614 14:21:38.156" endtime="20230614 14:21:38.283"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:38.284" level="INFO">Clicking element 'xpath=//*[@id="instruction-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:38.284" endtime="20230614 14:21:38.403"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="units-0-0"]</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:38.404" level="INFO">Typing text '1' into text field 'xpath=//*[@id="units-0-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:38.404" endtime="20230614 14:21:38.575"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="position-0-0"]</arg>
+<arg>Anterior</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230614 14:21:38.576" level="INFO">Selecting options from selection list 'xpath=//*[@id="position-0-0"]' by label Anterior.</msg>
+<status status="PASS" starttime="20230614 14:21:38.576" endtime="20230614 14:21:38.726"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>xpath=//*[@id="scannerType-0"]</arg>
+<arg>3Shape</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230614 14:21:38.731" level="INFO">Selecting options from selection list 'xpath=//*[@id="scannerType-0"]' by label 3Shape.</msg>
+<status status="PASS" starttime="20230614 14:21:38.728" endtime="20230614 14:21:38.787"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="instruction-0"]</arg>
+<arg>simple automated notes</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:38.788" level="INFO">Typing text 'simple automated notes' into text field 'xpath=//*[@id="instruction-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:38.787" endtime="20230614 14:21:39.167"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="impt-checkbox-1"]/div[2]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230614 14:21:39.168" endtime="20230614 14:21:39.468"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-submit-one-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:39.471" level="INFO">Clicking element 'xpath=//*[@id="uia-submit-one-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:39.469" endtime="20230614 14:21:39.559"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<arg>to wait submittion of case</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:21:49.561" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20230614 14:21:49.561" level="INFO">to wait submittion of case</msg>
+<status status="PASS" starttime="20230614 14:21:39.560" endtime="20230614 14:21:49.561"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230614 14:21:49.564" endtime="20230614 14:21:49.893"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="close-wrapper"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:49.896" level="INFO">Clicking element 'xpath=//*[@id="close-wrapper"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:49.895" endtime="20230614 14:21:50.026"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230614 14:21:50.027" endtime="20230614 14:21:51.291"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${casenumber}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:51.379" level="INFO">${casenumber} = 131298207</msg>
+<status status="PASS" starttime="20230614 14:21:51.291" endtime="20230614 14:21:51.381"/>
+</kw>
+<kw name="Copy" library="copy">
+<var>${checkcaseno}</var>
+<arg>${casenumber}</arg>
+<doc>Shallow copy operation on arbitrary Python objects.</doc>
+<msg timestamp="20230614 14:21:51.382" level="INFO">${checkcaseno} = 131298207</msg>
+<status status="PASS" starttime="20230614 14:21:51.381" endtime="20230614 14:21:51.382"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:51.383" level="INFO">Clicking element 'xpath=//*[@id="parent_header"]/div/div[1]/div[3]/ul/li[3]/div'.</msg>
+<status status="PASS" starttime="20230614 14:21:51.383" endtime="20230614 14:21:51.443"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:51.445" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230614 14:21:51.443" endtime="20230614 14:21:51.501"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:21:51.503" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230614 14:21:51.502" endtime="20230614 14:22:14.745"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${edusername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:22:14.746" level="INFO">Typing text 'design@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230614 14:22:14.745" endtime="20230614 14:22:14.817"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${edpassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:22:14.818" level="INFO">Typing text 'password1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230614 14:22:14.817" endtime="20230614 14:22:14.908"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:22:14.909" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230614 14:22:14.909" endtime="20230614 14:24:33.370"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=/html/body/header/div/nav/div/div[4]/div/div[2]/input</arg>
+<arg>test lab name 419</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:33.372" level="INFO">Typing text 'test lab name 419' into text field 'xpath=/html/body/header/div/nav/div/div[4]/div/div[2]/input'.</msg>
+<status status="PASS" starttime="20230614 14:24:33.370" endtime="20230614 14:24:34.610"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="filter-input-cases-no"]</arg>
+<arg>${checkcaseno}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:34.611" level="INFO">Typing text '131298207' into text field 'xpath=//*[@id="filter-input-cases-no"]'.</msg>
+<status status="PASS" starttime="20230614 14:24:34.611" endtime="20230614 14:24:34.813"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigntome-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:34.814" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-assigntome-0"]'.</msg>
+<status status="PASS" starttime="20230614 14:24:34.813" endtime="20230614 14:24:35.008"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-assigned"]/div/div[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:35.009" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-assigned"]/div/div[2]'.</msg>
+<status status="PASS" starttime="20230614 14:24:35.008" endtime="20230614 14:24:35.064"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<arg>xpath=//*[@id="filter-input-cases-no"]</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230614 14:24:35.064" endtime="20230614 14:24:38.092"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="filter-input-cases-no"]</arg>
+<arg>${checkcaseno}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:38.092" level="INFO">Typing text '131298207' into text field 'xpath=//*[@id="filter-input-cases-no"]'.</msg>
+<status status="PASS" starttime="20230614 14:24:38.092" endtime="20230614 14:24:38.174"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230614 14:24:38.175" endtime="20230614 14:24:38.198"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[10]/div[2]/div/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:38.199" level="INFO">Clicking element 'xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[10]/div[2]/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20230614 14:24:38.199" endtime="20230614 14:24:38.272"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<arg>wait to download files</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:24:48.275" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20230614 14:24:48.275" level="INFO">wait to download files</msg>
+<status status="PASS" starttime="20230614 14:24:38.273" endtime="20230614 14:24:48.276"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[10]/div[3]/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:24:48.278" level="INFO">Clicking element 'xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[10]/div[3]/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230614 14:24:48.277" endtime="20230614 14:24:48.420"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath=//*[@id="hiddeninput-cm"]</arg>
+<arg>c:\\Users\\Nimbyx\\Documents\\Robot - framework\\Automation to send to Sol\\evident design test automation/Submitfile.zip</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230614 14:24:48.423" level="INFO">Sending c:\Users\Nimbyx\Documents\Robot - framework\Automation to send to Sol\evident design test automation\Submitfile.zip to browser.</msg>
+<status status="PASS" starttime="20230614 14:24:48.421" endtime="20230614 14:24:48.461"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:25:03.463" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20230614 14:24:48.462" endtime="20230614 14:25:03.464"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:03.467" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-submit"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:03.466" endtime="20230614 14:25:03.557"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:25:08.558" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230614 14:25:03.558" endtime="20230614 14:25:08.558"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="submit-design-modal"]/div[1]/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:08.562" level="INFO">Clicking element 'xpath=//*[@id="submit-design-modal"]/div[1]/img'.</msg>
+<status status="PASS" starttime="20230614 14:25:08.560" endtime="20230614 14:25:08.631"/>
+</kw>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230614 14:25:08.632" endtime="20230614 14:25:09.635"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-completed"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:09.636" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-completed"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:09.636" endtime="20230614 14:25:09.709"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:25:12.712" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230614 14:25:09.711" endtime="20230614 14:25:12.712"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="uia-btn-completed"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:12.716" level="INFO">Clicking element 'xpath=//*[@id="uia-btn-completed"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:12.714" endtime="20230614 14:25:12.813"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="search-lab-input uia-textinput-labfilter"]</arg>
+<arg>test lab name 419</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:12.816" level="INFO">Typing text 'test lab name 419' into text field 'xpath=//*[@id="search-lab-input uia-textinput-labfilter"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:12.814" endtime="20230614 14:25:13.823"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="filter-input-cases-no"]</arg>
+<arg>${checkcaseno}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:13.824" level="INFO">Typing text '131298207' into text field 'xpath=//*[@id="filter-input-cases-no"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:13.823" endtime="20230614 14:25:13.952"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<arg>wait for the page to load</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:25:16.953" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20230614 14:25:16.953" level="INFO">wait for the page to load</msg>
+<status status="PASS" starttime="20230614 14:25:13.953" endtime="20230614 14:25:16.954"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${completedcase}</var>
+<arg>xpath=/html/body/ui-view/ui-view/designer-my-cases/div/div/div[2]/div[1]/table/tbody/tr[1]/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:19.370" level="INFO">${completedcase} = 131298207</msg>
+<status status="PASS" starttime="20230614 14:25:16.955" endtime="20230614 14:25:19.370"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<var>${caseiscompleted}</var>
+<arg>${checkcaseno}</arg>
+<arg>${completedcase}</arg>
+<arg>case no submitted and completed is equal</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230614 14:25:19.371" level="INFO">${caseiscompleted} = None</msg>
+<status status="PASS" starttime="20230614 14:25:19.371" endtime="20230614 14:25:19.371"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230614 14:25:19.372" endtime="20230614 14:25:19.397"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="single-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:19.398" level="INFO">Clicking element 'xpath=//*[@id="single-button"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:19.398" endtime="20230614 14:25:19.453"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-logout"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:19.456" level="INFO">Clicking element 'xpath=//*[@id="ed-logout"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:19.454" endtime="20230614 14:25:19.515"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:19.518" level="INFO">Clicking element 'xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20230614 14:25:19.516" endtime="20230614 14:25:32.972"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="UserName"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:32.974" level="INFO">Typing text 'testlab419@getnada.com' into text field 'xpath=//*[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:32.973" endtime="20230614 14:25:33.051"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="Password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:33.052" level="INFO">Typing text 'P@ssword1' into text field 'xpath=//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:33.052" endtime="20230614 14:25:33.133"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="sso-login"]/form/input[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:33.134" level="INFO">Clicking element 'xpath=//*[@id="sso-login"]/form/input[5]'.</msg>
+<status status="PASS" starttime="20230614 14:25:33.134" endtime="20230614 14:25:34.348"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:25:44.352" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230614 14:25:34.350" endtime="20230614 14:25:44.352"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="search-input-cases"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230614 14:25:44.354" endtime="20230614 14:25:51.538"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath=//*[@id="search-input-cases"]</arg>
+<arg>${completedcase}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:51.539" level="INFO">Typing text '131298207' into text field 'xpath=//*[@id="search-input-cases"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:51.538" endtime="20230614 14:25:51.649"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="search_cont"]/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:51.651" level="INFO">Clicking element 'xpath=//*[@id="search_cont"]/div[1]/button'.</msg>
+<status status="PASS" starttime="20230614 14:25:51.650" endtime="20230614 14:25:51.725"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-not-downloaded-filter"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:51.728" level="INFO">Clicking element 'xpath=//*[@id="ed-completed-not-downloaded-filter"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:51.727" endtime="20230614 14:25:51.830"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-download-case-attachment"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230614 14:25:51.831" endtime="20230614 14:25:53.450"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${downloadbycaseno}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:53.486" level="INFO">${downloadbycaseno} = 131298207</msg>
+<status status="PASS" starttime="20230614 14:25:53.451" endtime="20230614 14:25:53.486"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${completedcase}</arg>
+<arg>${downloadbycaseno}</arg>
+<arg>case no match ok to download</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230614 14:25:53.487" endtime="20230614 14:25:53.487"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-download-case-attachment"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:25:53.488" level="INFO">Clicking element 'xpath=//*[@id="ed-download-case-attachment"]'.</msg>
+<status status="PASS" starttime="20230614 14:25:53.488" endtime="20230614 14:25:53.579"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<arg>wait for the download to complete</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:26:03.580" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20230614 14:26:03.580" level="INFO">wait for the download to complete</msg>
+<status status="PASS" starttime="20230614 14:25:53.580" endtime="20230614 14:26:03.580"/>
+</kw>
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20230614 14:26:03.582" endtime="20230614 14:26:04.270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[@id="ed-completed-filter"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230614 14:26:04.270" endtime="20230614 14:26:04.302"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${movecomplete}</var>
+<arg>xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr/td[2]/div[1]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230614 14:26:04.752" level="INFO">${movecomplete} = 131298207</msg>
+<status status="PASS" starttime="20230614 14:26:04.303" endtime="20230614 14:26:04.753"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${checkcaseno}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230614 14:26:04.753" endtime="20230614 14:26:04.753"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${completedcase}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230614 14:26:04.754" endtime="20230614 14:26:04.754"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${downloadbycaseno}</arg>
+<arg>${movecomplete}</arg>
+<arg>Done end to end</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230614 14:26:04.755" endtime="20230614 14:26:04.755"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>100s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230614 14:27:44.758" level="INFO">Slept 1 minute 40 seconds</msg>
+<status status="PASS" starttime="20230614 14:26:04.756" endtime="20230614 14:27:44.758"/>
+</kw>
+<status status="PASS" starttime="20230614 14:19:53.097" endtime="20230614 14:27:44.760"/>
+</test>
+<doc>Evident design end to end automation</doc>
+<status status="PASS" starttime="20230614 14:19:52.884" endtime="20230614 14:27:44.764"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Use Case#1 Existing Evident Design Customer">Use Case#1 Existing Evident Design Customer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
