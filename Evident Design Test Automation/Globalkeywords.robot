@@ -28,15 +28,17 @@ ${adminUser}    passportadmin@getnada.com
 ${adminPass}    password1
 ${Labnewemail}    labtestautomation1@getnada.com
 ${newlabname}    NewLab test Automation
-
-
-
-
+@{prodcatlistunits}    crown-and-bridge    implant-restoration
+${productcatarray}         #this is for the surgical planning product.
+${prodcatflow}
+${prodcat}    3    #dont enter any value
+${prodcatname}    Models    #check the available values on Product ordering - Product Category name             
+${prodno}    0       #check the available values on Product ordering - Product number
 
 *** Keywords ***
 Go to evident staging
     Open browser    ${Url}    ${browser}
-    Set Browser Implicit Wait    100s
+    Set Browser Implicit Wait    20s
     Maximize Browser Window
 
 
@@ -66,7 +68,7 @@ Upload multiple files
         sleep    10s  
 
  close support pop up modal
-     ${supportpop1}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="hubspot-conversations-iframe"]
+     ${supportpop1}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="hubspot-conversations-iframe"]    timeout=10s
      IF    ${supportpop1} == ${True}
          Select Frame    xpath=//*[@id="hubspot-conversations-iframe"]
          ${supportpop}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="welcome-message"]
@@ -76,6 +78,7 @@ Upload multiple files
             Click Element    xpath=//*[@id="welcome-message"]
             Sleep    0.5s
             Click Element    xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button
+            
             Unselect Frame   
             Sleep    1s 
         ELSE
@@ -83,25 +86,15 @@ Upload multiple files
         END   
             
      ELSE
+            
             Unselect Frame
      END
-        # ${supportpop}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="welcome-message"]
-        # Log To Console    ${supportpop}
-        # IF    ${supportpop} == ${True}
-        #     # Select Frame    xpath=//*[@id="hubspot-conversations-iframe"]
-        #     Click Element    xpath=//*[@id="welcome-message"]
-        #     Sleep    0.5s
-        #     Click Element    xpath=/html/body/div[2]/div[1]/div/span[3]/span/div/button
-        #     Unselect Frame   
-        #     Sleep    1s 
-        # ELSE
-        #     Unselect Frame 
-        # END
 Fill up case with favorite
-            #get webelements
-                ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+
+            ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
                 ${length}    Get Length    ${elements}
                 ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
                     IF    ${last_index} == 0
                         ${thetr}    Set Variable    ${EMPTY}
                     ELSE
@@ -111,32 +104,125 @@ Fill up case with favorite
                 #click design type
                 Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
                 #select from design type drop down
-                Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p
-                #click the check box of the selected design type
-                Click Element    xpath=//*[@id="checkbox-crown-and-bridge-${last_index}-0-0"]/div[1]
-                #click the instruction table to remove the design type dropdown modal
-                Click Element    xpath=//*[@id="instruction-${last_index}"]
-                #input number of units
-                Input Text    xpath=//*[@id="units-${last_index}-0"]    2
-                #select position
-                Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
-                #select design software
-                Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
-                #input instructions
-                Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
-                #click submit
-                Sleep    1s
+                    #Evaluating the prodcat number based on the defined product category name
+                IF    "${prodcatname}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${prodcatname}
+                ELSE
+                    IF    "${prodcatname}" == "Models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${prodcatname}
+                    ELSE
+                        IF    "${prodcatname}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${prodcatname}
+                        ELSE
+                            IF    "${prodcatname}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${prodcatname}
+                            ELSE
+                                IF    "${prodcatname}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${prodcatname}
+                                ELSE
+                                    IF    "${prodcatname}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${prodcatname}
+                                        ${prodcatflow}    Set Variable    ${prodcatname}
+                                    ELSE
+                                        IF    "${prodcatname}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${prodcatname}
+                                        ELSE
+                                            IF    "${prodcatname}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${prodcatname}
+                                            ELSE
+                                                IF    "${prodcatname}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${prodcatname}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${prodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatname}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-0"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+                    Confirm Submit
+                ELSE
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${prodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatname}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    Confirm Submit
+                END
+            # #get webelements
+            #     ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+            #     ${length}    Get Length    ${elements}
+            #     ${last_index}    Evaluate    ${length} - 1
+            #     Set Global Variable    ${length}
+            #         IF    ${last_index} == 0
+            #             ${thetr}    Set Variable    ${EMPTY}
+            #         ELSE
+            #             ${thetr}    Set Variable    [${length}]
+            #         END
+            #     Log To Console    ${thetr} this is the log
+            #     #click design type
+            #     Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+            #     #select from design type drop down
+            #     Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p
+            #     #click the check box of the selected design type
+            #     Click Element    xpath=//*[@id="checkbox-crown-and-bridge-${last_index}-0-0"]/div[1]
+            #     #click the instruction table to remove the design type dropdown modal
+            #     Click Element    xpath=//*[@id="instruction-${last_index}"]
+            #     #input number of units
+            #     Input Text    xpath=//*[@id="units-${last_index}-0"]    2
+            #     #select position
+            #     Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
+            #     #select design software
+            #     Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+            #     #input instructions
+            #     Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+            #     #click submit
+            #     Sleep    1s
 
 Fill up case with no favorite
             #get webelements
                 ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
-                ${length}    Get Length    ${elements}
-                ${last_index}    Evaluate    ${length} - 1
+                ${nlength}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${nlength} - 1
                     IF    ${last_index} == 0
                         ${thetr}    Set Variable    ${EMPTY}
                     ELSE
-                        ${thetr}    Set Variable    [${length}]
+                        ${thetr}    Set Variable    [${nlength}]
                     END
+                    Set Global Variable    ${thetr}
                 Log To Console    ${thetr} this is the log
                 #click design type
                 Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
@@ -302,16 +388,26 @@ Process the case number
         Click Element    xpath=//*[@id="uia-btn-inprogress"]
         Sleep    2s
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
-        Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
-        Wait Until Element Is Visible    class=remove_file.ng-scope
+        Sleep    2s
+        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]
+        Log To Console    ${submitdesign}   upload design is visible.
+        IF    ${submitdesign} == ${true}
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ELSE
+            Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        END
+        # Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
+        # Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
+        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s    
         Sleep    1s
         #click Submit button
         Click Element    xpath=//*[@id="uia-btn-submit"]
         Sleep    2s    
         #close the success message
+        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
         Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
-
-
         #Check case on completed
         Reload Page
         Scroll to top
@@ -344,13 +440,21 @@ Process the multiple cases submitted
         #Submit file   
         #click submit a file
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno1}"]/td[10]/div[3]/div/div[1]/button
-        Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]    
+        Log To Console    ${submitdesign}   upload design is visible.
+        IF    ${submitdesign} == ${true}
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ELSE
+            Click Element    xpath=//*[@id="checkCases_No_${checkcaseno1}"]/td[10]/div[3]/div/div[1]/button
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        END
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
+        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
         Sleep    2s
-        Wait Until Element Is Visible    class=remove_file.ng-scope
-        Sleep    1s
         #click Submit button
         Click Element    xpath=//*[@id="uia-btn-submit"]
-        Sleep    2s    
+        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
         #close the success message
         Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
 
@@ -372,16 +476,22 @@ Process the multiple cases submitted
         #Submit file   
         #click submit a file
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno2}"]/td[10]/div[3]/div/div[1]/button
-        Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design2.jfif
-        Sleep    2s
-        Wait Until Element Is Visible    class=remove_file.ng-scope
+        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]    
+        Log To Console    ${submitdesign}   upload design is visible.
+        IF    ${submitdesign} == ${true}
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ELSE
+            Click Element    xpath=//*[@id="checkCases_No_${checkcaseno2}"]/td[10]/div[3]/div/div[1]/button
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        END
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
+        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s
         Sleep    2s
         #click Submit button
         Click Element    xpath=//*[@id="uia-btn-submit"]
-        Sleep    1s    
+        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
         #close the success message
         Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
-
         #Check case number 3
         #search lab name
         Sleep    1.5s
@@ -391,7 +501,6 @@ Process the multiple cases submitted
         Click Element    class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${checkcaseno3}
         Sleep    2s
         #Download file
-        
         Sleep    2s
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno3}"]/td[10]/div[2]/div/div[3]/button
         Sleep    15s    wait to download files
@@ -400,23 +509,30 @@ Process the multiple cases submitted
         #Submit file   
         #click submit a file
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno3}"]/td[10]/div[3]/div/div[1]/button
-        Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design3.jfif
-        Sleep    2s
-        Wait Until Element Is Visible    class=remove_file.ng-scope
+        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]    
+        Log To Console    ${submitdesign}   upload design is visible.
+        IF    ${submitdesign} == ${true}
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ELSE
+            Click Element    xpath=//*[@id="checkCases_No_${checkcaseno3}"]/td[10]/div[3]/div/div[1]/button
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        END
+        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
         Sleep    2s
         #click Submit button
         Click Element    xpath=//*[@id="uia-btn-submit"]
-        Sleep    2s    
+        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
         #close the success message
         Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
-
+        Sleep    2
         #Check case on completed
         Reload Page
         Scroll to top
         Click Element    xpath=//*[@id="uia-btn-completed"]/div
-        ${casesucompleted1}    Run keyword and return Status    Page Should Contain    ${checkcaseno1}
-        ${casesucompleted2}    Run keyword and return Status    Page Should Contain    ${checkcaseno2}
-        ${casesucompleted3}    Run keyword and return Status    Page Should Contain    ${Checkcaseno3}
+        ${casesucompleted1}    Run keyword and return Status    Page Should Contain    ${checkcaseno1}    
+        ${casesucompleted2}    Run keyword and return Status    Page Should Contain    ${checkcaseno2}    
+        ${casesucompleted3}    Run keyword and return Status    Page Should Contain    ${Checkcaseno3}    
         Should Be True    ${casesucompleted1}
         Should Be True    ${casesucompleted2}
         Should Be True    ${casesucompleted3}
@@ -444,16 +560,16 @@ Search the completed case
         #Wait Until Element Is Visible    xpath=//*[@id="search-input-cases"]
         Sleep    5s
         Click Element    xpath=//*[@id="ed-completed-filter"]
-        ${casecompleted}    Run Keyword and return Status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase}"]/td[2]/div[1]/p[1]
+        ${casecompleted}    Run Keyword and return Status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase}"]/td[2]/div[1]/p[1]    
         Should Be True    ${casecompleted}
 
 Search and check if the cases are completed
         #first case
         [Arguments]    ${completedcase1}    ${completedcase2}    ${completedcase3}
         Click Element    xpath=//*[@id="ed-completed-filter"]
-        ${case1completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[2]/div[1]/p[1]
-        ${case2completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[2]/div[1]/p[1]
-        ${case3completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[2]/div[1]/p[1]
+        ${case1completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[2]/div[1]/p[1]    
+        ${case2completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[2]/div[1]/p[1]    
+        ${case3completed}    Run keyword and return status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[2]/div[1]/p[1]    
         Should Be True    ${case1completed}
         Should Be True    ${case2completed}
         Should Be True    ${case3completed}
@@ -464,17 +580,28 @@ Search and check if the cases are completed
 download the design file
         [Arguments]    ${completedcase}
         Scroll Element Into View    xpath=//*[@id="ed-download-case-attachment"]
-        Click Element    xpath=//*[@id="checkCases_No_${completedcase}"]/td[7]/div[3]/div[2]/div[1]
-        Sleep    15s    wait for the file to download
+        Click Element    xpath=//*[@id="checkCases_No_${completedcase}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download file(s)')]
+        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${completedcase}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download again')]    timeout=20s
+        # Click Element    xpath=//*[@id="checkCases_No_${completedcase}"]/td[7]/div[3]/div[2]/div[1]
+        # Sleep    15s    wait for the file to download
+        
 
 download the design file of multiple files completed
         [Arguments]    ${completedcase1}    ${completedcase2}    ${completedcase3}
-        Click Element    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[7]/div[3]/div[2]/div[1]
-        Sleep    15s    wait for the file to download
-        Click Element    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[7]/div[3]/div[2]/div[1]
-        Sleep    15s    wait for the file to download
-        Click Element    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[7]/div[3]/div[2]/div[1]
-        Sleep    25s    wait for the file to download
+        Click Element    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download file(s)')]
+        Click Element    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download file(s)')]
+        Click Element    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download file(s)')]
+        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download again')]    timeout=20s
+        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download again')]    timeout=20s
+        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download again')]    timeout=20s
+        
+        
+        # Click Element    xpath=//*[@id="checkCases_No_${completedcase1}"]/td[7]/div[3]/div[2]/div[1]
+        # Sleep    15s    wait for the file to download
+        # Click Element    xpath=//*[@id="checkCases_No_${completedcase2}"]/td[7]/div[3]/div[2]/div[1]
+        # Sleep    15s    wait for the file to download
+        # Click Element    xpath=//*[@id="checkCases_No_${completedcase3}"]/td[7]/div[3]/div[2]/div[1]
+        # Sleep    25s    wait for the file to download
 
 
 Check if element is removed from Not yet completed
@@ -483,18 +610,22 @@ Check if element is removed from Not yet completed
         Sleep    3s
         Scroll to top
         Click Element    xpath=//*[@id="ed-completed-not-downloaded-filter"]
-        Sleep    5s       
-        ${elements}    Get WebElements    css=.ed-case-no.row-word-break
-            FOR    ${element}    IN    @{elements}
-                ${text}    Get Text    ${element}
-                    ${textcaseno}    Set Variable    ${text[:9]}
-                        Run Keyword if   '${casenumber}' in '${textcaseno}'    Fail    expected result: case number should be removed
-                            END
+        Sleep    3s
+        ${caseremoved}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="checkCases_No_${casenumber}"]/td[2]    
+        Should Not Be True    ${caseremoved}
+        Log To Console    ${caseremoved} is successfully removed from Not yet downloaded
+        # Sleep    5s       
+        # ${elements}    Get WebElements    css=.ed-case-no.row-word-break
+        #     FOR    ${element}    IN    @{elements}
+        #         ${text}    Get Text    ${element}
+        #             ${textcaseno}    Set Variable    ${text[:9]}
+        #                 Run Keyword if   '${casenumber}' in '${textcaseno}'    Fail    expected result: case number should be removed
+        #                     END
 Check if the cases are removed from not yet downloaded
     [Arguments]    ${completedcase1}    ${completedcase2}    ${completedcase3}
     Reload Page
     Scroll to top
-    Wait Until Element Is Visible    xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]
+    Wait Until Element Is Visible    xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]    timeout=20s
     #click not yet downloaded filter
     Click Element    xpath=//*[@id="ed-completed-not-downloaded-filter"]/div/div[2]
     
@@ -521,7 +652,7 @@ Check if the cases are removed from not yet downloaded
 
 Element should be Visible
     [Arguments]    ${locator}
-    Wait Until Page Contains Element    ${locator}
+    Wait Until Page Contains Element    ${locator}    timeout=20s
     Element Should Be Visible    ${locator}
 
 change password
@@ -713,7 +844,7 @@ Find the lab and add user
         Click Element    xpath=//*[@id="mat-tab-content-0-0"]/div/div/div/mat-table/mat-row/mat-cell[2]/mat-icon
         Sleep    5s
         Scroll to top
-        Wait Until Element Is Visible    xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon    timeout=30s
+        Wait Until Element Is Visible    xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon    timeout=20s
         Click Element    xpath=//*[@id="customer-information"]/div[1]/div/div/mat-icon
         Click Element    xpath=//*[@id="customer-information"]/div[2]/div/div/div[2]/div[3]/a
         Scroll Element Into View    xpath=//*[@id="customer-information"]/div[3]/div
@@ -736,7 +867,6 @@ self sign up the user
         Input Text    xpath=//*[@id="cfmpwd"]    ${password}
         Click Element    xpath=//*[@id="lab-register-page"]/div/form/div[5]/button
 
-        
 
 
 

@@ -12,6 +12,7 @@ Library    XML
 Library    Telnet
 Library    OperatingSystem
 Library    C:/Users/Nimbyx/Documents/Robot - framework/Evident Automation/Evident Design Test Automation/BeautifulSoupLibrary.py
+# Library    Globalkeywords
 Resource    C:/Users/Nimbyx/Documents/Robot - framework/Evident Automation/Evident Design Test Automation/Globalkeywords.robot   
 
 
@@ -26,6 +27,11 @@ ${getcasetime}    Get Text    xpath=/html/body/ui-view/ui-view/lab-case-manageme
 ${edusername}    design@getnada.com
 ${edpassword}    password1
 ${newpassword}    nP@ssword1
+${prodcat}    3    #dont enter any value
+${prodcatname}    crown-and-bridge    #check the available values on Product ordering - Product Category name             
+${prodno}    0       #check the available values on Product ordering - Product number
+
+
 
 
 
@@ -187,17 +193,112 @@ Test Scenario #5 #6
     Log To Console    ${casenumber}- Done End to End Automation of Test Scenario 6
 
 # testing lang 
+#     Go to evident staging
+#     Login lab account
+#     Upload file
+#     close support pop up modal
+#     #Fill up case with favorites
+#                 ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+#                 ${length}    Get Length    ${elements}
+#                 ${last_index}    Evaluate    ${length} - 1
+#                 Set Global Variable    ${length}
+#                     IF    ${last_index} == 0
+#                         ${thetr}    Set Variable    ${EMPTY}
+#                     ELSE
+#                         ${thetr}    Set Variable    [${length}]
+#                     END
+#                 Log To Console    ${thetr} this is the log
+#                 #click design type
+#                 Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+#                 #select from design type drop down
+#                     #Evaluating the prodcat number based on the defined product category name
+#                 IF    "${prodcatname}" == "crown-and-bridge"
+#                     ${prodcat}    Set Variable    2 
+#                     ${prodcatflow}    Set Variable    ${prodcatname}
+#                 ELSE
+#                     IF    "${prodcatname}" == "Models"
+#                         ${prodcat}    Set Variable    3
+#                         ${prodcatflow}    Set Variable    ${prodcatname}
+#                     ELSE
+#                         IF    "${prodcatname}" == "implant-restoration"
+#                             ${prodcat}    Set Variable    4
+#                             ${prodcatflow}    Set Variable    ${prodcatname}
+#                         ELSE
+#                             IF    "${prodcatname}" == "aligners"
+#                                 ${prodcat}    Set Variable    6
+#                                 ${prodcatflow}    Set Variable    ${prodcatname}
+#                             ELSE
+#                                 IF    "${prodcatname}" == "removables"
+#                                     ${prodcat}    Set Variable    7
+#                                     ${prodcatflow}    Set Variable    ${prodcatname}
+#                                 ELSE
+#                                     IF    "${prodcatname}" == "snapon-smile"
+#                                         ${prodcat}    Set Variable    8
+#                                         ${prodcatflow}    Set Variable    ${prodcatname}
+#                                         ${prodcatflow}    Set Variable    ${prodcatname}
+#                                     ELSE
+#                                         IF    "${prodcatname}" == "dentofacial-digital"
+#                                             ${prodcat}    Set Variable    9
+#                                             ${prodcatflow}    Set Variable    ${prodcatname}
+#                                         ELSE
+#                                             IF    "${prodcatname}" == "other"
+#                                                 ${prodcat}    Set Variable    10
+#                                                 ${prodcatflow}    Set Variable    ${prodcatname}
+#                                             ELSE
+#                                                 IF    "${prodcatname}" == "Surgical Planning"
+#                                                     ${prodcat}    Set Variable    5
+#                                                     ${prodcatname}    Set Variable    implant-restoration
+#                                                     ${productcatarray}    Set Variable    [2]
+#                                                     ${prodcatflow}    Set Variable    Surgical Planning
+#                                                 ELSE
+#                                                     Close All Browsers
+#                                                 END
+#                                             END
+                                            
+#                                         END
+#                                     END
+#                                 END
+#                             END
+#                         END
+#                     END
+#                 END
+#                 Log To Console    ${prodcat} This is the product number based on the defined product category name
+#                 #Assigning flow based on the product selected
+#                 ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+#                 Log To Console    ${inthelist}
+#                 IF    ${inthelist} == ${True}
+#                     Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${prodcat}]/p
+#                     #click the check box of the selected design type
+#                     Click Element    xpath=(//*[@id="checkbox-${prodcatname}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+#                     #click the instruction table to remove the design type dropdown modal
+#                     Click Element    xpath=//*[@id="instruction-${last_index}"]
+#                     #input number of units
+#                     Input Text    xpath=//*[@id="units-${last_index}-0"]    2
+#                     #select position
+#                     Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
+#                     #select design software
+#                     Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+#                     #input instructions
+#                     Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+#                     #click submit
+#                     Sleep    1s
+#                     Confirm Submit
+#                 ELSE
+#                     Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${prodcat}]/p
+#                     #click the check box of the selected design type
+#                     Click Element    xpath=(//*[@id="checkbox-${prodcatname}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+#                     Confirm Submit
+#                 END
 
+# Isa pang test
 
-
-
-
-
-
-
-
-
-
-
-
+#     Go to evident staging
+#     Login lab account
+#     # Scroll Element Into View    xpath=//*[@id="ed-download-case-attachment"]
     
+#     Click Element    xpath=//*[@id="checkCases_No_871299065"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download file(s)')]
+#     Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_871299065"]/td[7]/div[3]/div[2]/div[1]/button[contains(text(), 'Download again')]
+#     Scroll Element Into View    xpath=//*[@id="ed-completed-not-downloaded-filter"] 
+#     Click Element    xpath=//*[@id="ed-completed-not-downloaded-filter"]   
+#     ${removed}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="checkCases_No_871299065"]/td[2]    timeout=10s
+#     Should Not Be True    ${removed}
