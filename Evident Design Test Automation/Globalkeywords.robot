@@ -9,37 +9,24 @@ Library    String
 Library    XML
 Library    Telnet
 Library    OperatingSystem
+
 Library    C:/Users/Nimbyx/Documents/Robot - framework/Evident Automation/Evident Design Test Automation/BeautifulSoupLibrary.py
+Resource    C:/Users/Nimbyx/Documents/Robot - framework/Evident Automation/Evident Design Test Automation/Design Variables.robot
 
 
 *** Variables ***
-${browser}    edge
-${Url}    https://stagingevidentdigital.xyz/
-${AdminUrl}    https://ppevidentadminhub.azurewebsites.net/#/login
-${NewUserSsu}    https://preprodevidentdesign.azurewebsites.net/Account/Registration
-${username}    labtestautomation@getnada.com
-${password}    P@ssword1
-${labname}    Automation lab
-${getcasetime}    Get Text    xpath=/html/body/ui-view/ui-view/lab-case-management/div/div[2]/div[5]/div[1]/table/tbody/tr[1]/td[4]
-${edusername}    design@getnada.com
-${edpassword}    password1
-${newpassword}    nP@ssword1
-${adminUser}    passportadmin@getnada.com
-${adminPass}    password1
-${Labnewemail}    labtestautomation1@getnada.com
-${newlabname}    NewLab test Automation
-@{prodcatlistunits}    crown-and-bridge    implant-restoration
-${productcatarray}         #this is for the surgical planning product.
-${prodcatflow}
-${prodcat}    3    #dont enter any value
-${prodcatname}    Models    #check the available values on Product ordering - Product Category name             
-${prodno}    0       #check the available values on Product ordering - Product number
 
 *** Keywords ***
 Go to evident staging
     Open browser    ${Url}    ${browser}
     Set Browser Implicit Wait    20s
     Maximize Browser Window
+
+Go to preproddesign
+    Open browser    ${desurl}    ${browser}
+    Set Browser Implicit Wait    20s
+    Maximize Browser Window
+
 
 
 Scroll to top
@@ -59,7 +46,7 @@ Login lab account
         #click login button
         Click Element    xpath=//*[@id="sso-login"]/form/input[5]
 Upload file
-        Wait Until Page Contains Element    xpath=//*[@id="hiddeninput-cm"]    timeout=100s
+        Wait Until Page Contains Element    xpath=//*[@id="hiddeninput-cm"]    timeout=10s
         Choose File     xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/download.jfif
         Sleep    3s 
 Upload multiple files
@@ -68,7 +55,7 @@ Upload multiple files
         sleep    10s  
 
  close support pop up modal
-     ${supportpop1}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="hubspot-conversations-iframe"]    timeout=10s
+     ${supportpop1}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="hubspot-conversations-iframe"]    timeout=3s
      IF    ${supportpop1} == ${True}
          Select Frame    xpath=//*[@id="hubspot-conversations-iframe"]
          ${supportpop}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="welcome-message"]
@@ -182,35 +169,6 @@ Fill up case with favorite
                     Click Element    xpath=(//*[@id="checkbox-${prodcatname}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
                     Confirm Submit
                 END
-            # #get webelements
-            #     ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
-            #     ${length}    Get Length    ${elements}
-            #     ${last_index}    Evaluate    ${length} - 1
-            #     Set Global Variable    ${length}
-            #         IF    ${last_index} == 0
-            #             ${thetr}    Set Variable    ${EMPTY}
-            #         ELSE
-            #             ${thetr}    Set Variable    [${length}]
-            #         END
-            #     Log To Console    ${thetr} this is the log
-            #     #click design type
-            #     Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
-            #     #select from design type drop down
-            #     Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[2]/p
-            #     #click the check box of the selected design type
-            #     Click Element    xpath=//*[@id="checkbox-crown-and-bridge-${last_index}-0-0"]/div[1]
-            #     #click the instruction table to remove the design type dropdown modal
-            #     Click Element    xpath=//*[@id="instruction-${last_index}"]
-            #     #input number of units
-            #     Input Text    xpath=//*[@id="units-${last_index}-0"]    2
-            #     #select position
-            #     Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
-            #     #select design software
-            #     Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
-            #     #input instructions
-            #     Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
-            #     #click submit
-            #     Sleep    1s
 
 Fill up case with no favorite
             #get webelements
@@ -867,8 +825,753 @@ self sign up the user
         Input Text    xpath=//*[@id="cfmpwd"]    ${password}
         Click Element    xpath=//*[@id="lab-register-page"]/div/form/div[5]/button
 
+Submit single case with multiple products
+#Setup the Products varialbe
+    ${prodlength}    Get Length    ${addprodname}
+    Log To Console    ${prodlength}
+    IF   ${prodlength} == 2
+         ${addprodname1}    Set Variable    ${addprodname}[0]
+         ${addprodname2}    Set Variable    ${addprodname}[1]
+    ELSE
+        IF  ${prodlength} == 3
+            ${addprodname1}    Set Variable    ${addprodname}[0]
+            ${addprodname2}    Set Variable    ${addprodname}[1]
+            ${addprodname3}    Set Variable    ${addprodname}[2]
+        ELSE
+            IF    ${prodlength} == 4
+                ${addprodname1}    Set Variable    ${addprodname}[0]
+                ${addprodname2}    Set Variable    ${addprodname}[1]
+                ${addprodname3}    Set Variable    ${addprodname}[2]
+                ${addprodname4}    Set Variable    ${addprodname}[3]
+            ELSE
+                IF    ${prodlength} == 5
+                    ${addprodname1}    Set Variable    ${addprodname}[0]
+                    ${addprodname2}    Set Variable    ${addprodname}[1]
+                    ${addprodname3}    Set Variable    ${addprodname}[2]
+                    ${addprodname4}    Set Variable    ${addprodname}[3]
+                    ${addprodname5}    Set Variable    ${addprodname}[4]
+                ELSE    
+                    IF    ${prodlength} == 6
+                        ${addprodname1}    Set Variable    ${addprodname}[0]
+                        ${addprodname2}    Set Variable    ${addprodname}[1]
+                        ${addprodname3}    Set Variable    ${addprodname}[2]
+                        ${addprodname4}    Set Variable    ${addprodname}[3]
+                        ${addprodname5}    Set Variable    ${addprodname}[4]
+                        ${addprodname6}    Set Variable    ${addprodname}[5]
+                    ELSE
+                        IF    ${prodlength} == 7
+                            ${addprodname1}    Set Variable    ${addprodname}[0]
+                            ${addprodname2}    Set Variable    ${addprodname}[1]
+                            ${addprodname3}    Set Variable    ${addprodname}[2]
+                            ${addprodname4}    Set Variable    ${addprodname}[3]
+                            ${addprodname5}    Set Variable    ${addprodname}[4]
+                            ${addprodname6}    Set Variable    ${addprodname}[5]
+                            ${addprodname7}    Set Variable    ${addprodname}[6]
+                        ELSE
+                            IF    ${prodlength} == 8
+                            ${addprodname1}    Set Variable    ${addprodname}[0]
+                            ${addprodname2}    Set Variable    ${addprodname}[1]
+                            ${addprodname3}    Set Variable    ${addprodname}[2]
+                            ${addprodname4}    Set Variable    ${addprodname}[3]
+                            ${addprodname5}    Set Variable    ${addprodname}[4]
+                            ${addprodname6}    Set Variable    ${addprodname}[5]
+                            ${addprodname7}    Set Variable    ${addprodname}[6]
+                            ${addprodname8}    Set Variable    ${addprodname}[7]
+                            ELSE
+                            Close All Browsers
+                            END
+                        END   
+                    END 
+                END 
+            END
+        END 
+    END
+    #1st product
+    IF    ${prodlength} > 1
+    ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                    Log To Console    ${addprodname1}
+                IF  "${addprodname1}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname1}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname1}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname1}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname1}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname1}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname1}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname1}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname1}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname1}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname1}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname1}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname1}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname1}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname1}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname1}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname1}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname1}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Log To Console    First Product is incorrect
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                ${addprodcat}    Set Variable    ${prodcat}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-0"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-0"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+                    #Confirm Submit
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #Confirm Submit
+                END
+                
+    #2nd product
+    Log To Console    ${addprodname2} Second product
+    ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                IF  "${addprodname2}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname2}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname2}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname2}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname2}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname2}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname2}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname2}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname2}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname2}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname2}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname2}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname2}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname2}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname2}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname2}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname2}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname}[1]    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Log To Console    Second Product is incorrect
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                ${arrayno}    Set Variable    1
+                ${addprodcat}    Set Variable    ${prodcat}
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-${arrayno}"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-${arrayno}"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    # Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-${arrayno}"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-${arrayno}-${prodno}"]/div[2])${productcatarray}
+
+                END
+                END
+
+    #3rd product
+    IF    ${prodlength} > 2
+    Log To Console    ${addprodname3} Third product
+    ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                IF  "${addprodname3}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname3}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname3}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname3}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname3}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname3}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname3}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname3}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname3}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname3}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname3}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname3}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname3}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname3}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname3}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname3}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname3}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname3}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Log To Console    3rd product is incorrect
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                ${arrayno}    Set Variable    0
+                ${addprodcat}    Set Variable    ${prodcat}
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-${arrayno}"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-${arrayno}"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    # Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-${arrayno}-${prodno}"]/div[2])${productcatarray}
+
+                END
+                END
+                #4th product
+                IF    ${prodlength} > 3
+                Log To Console    ${addprodname4} Fourth product
+                ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                IF  "${addprodname4}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname4}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname4}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname4}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname4}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname4}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname4}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname4}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname4}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname4}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname4}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname4}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname4}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname4}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname4}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname4}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname4}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname4}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                ${arrayno}    Set Variable    0
+                ${addprodcat}    Set Variable    ${prodcat}
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-${arrayno}"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-${arrayno}"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    # Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-${arrayno}"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-${arrayno}-${prodno}"]/div[2])${productcatarray}
+
+                END
+                END
+
+                #5th product
+                IF    ${prodlength} > 4
+                Log To Console    ${addprodname5} Fourth product
+                ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                IF  "${addprodname5}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname5}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname5}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname5}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname5}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname5}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname5}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname5}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname5}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname5}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname5}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname5}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname5}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname5}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname5}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname5}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname5}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname5}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                ${arrayno}    Set Variable    0
+                ${addprodcat}    Set Variable    ${prodcat}
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-${arrayno}"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-${arrayno}"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    # Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-${arrayno}"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-${arrayno}-${prodno}"]/div[2])${productcatarray}
+
+                END
+                END
+
+                #6th product
+                IF    ${prodlength} > 5
+                Log To Console    ${addprodname6} Fourth product
+                ${elements}    Get WebElements    xpath=//*[@id="uia-draft-file-table-rows"]
+                ${length}    Get Length    ${elements}
+                ${last_index}    Evaluate    ${length} - 1
+                Set Global Variable    ${length}
+                    IF    ${last_index} == 0
+                        ${thetr}    Set Variable    ${EMPTY}
+                    ELSE
+                        ${thetr}    Set Variable    [${length}]
+                    END
+                Log To Console    ${thetr} this is the log
+                    #Evaluating the prodcat number based on the defined product category name
+                IF  "${addprodname6}" == "crown-and-bridge"
+                    ${prodcat}    Set Variable    2 
+                    ${prodcatflow}    Set Variable    ${addprodname6}
+                    ${prodno}    Set Variable    ${prodnocnb}
+                ELSE
+                    IF    "${addprodname6}" == "models"
+                        ${prodcat}    Set Variable    3
+                        ${prodcatflow}    Set Variable    ${addprodname6}
+                        ${prodno}    Set Variable    ${prodnomodel}
+                    ELSE
+                        IF    "${addprodname6}" == "implant-restoration"
+                            ${prodcat}    Set Variable    4
+                            ${prodcatflow}    Set Variable    ${addprodname6}
+                            ${prodno}    Set Variable    ${prodnoimplant}
+                        ELSE
+                            IF    "${addprodname6}" == "aligners"
+                                ${prodcat}    Set Variable    6
+                                ${prodcatflow}    Set Variable    ${addprodname6}
+                                ${prodno}    Set Variable    ${prodnoaligners}
+                            ELSE
+                                IF    "${addprodname6}" == "removables"
+                                    ${prodcat}    Set Variable    7
+                                    ${prodcatflow}    Set Variable    ${addprodname6}
+                                    ${prodno}    Set Variable    ${prodnoremovables}
+                                ELSE
+                                    IF    "${addprodname6}" == "snapon-smile"
+                                        ${prodcat}    Set Variable    8
+                                        ${prodcatflow}    Set Variable    ${addprodname6}
+                                        ${prodno}    Set Variable    ${prodnosnap}
+                                    ELSE
+                                        IF    "${addprodname6}" == "dentofacial-digital"
+                                            ${prodcat}    Set Variable    9
+                                            ${prodcatflow}    Set Variable    ${addprodname6}
+                                            ${prodno}    Set Variable    ${prodnodento}
+                                        ELSE
+                                            IF    "${addprodname6}" == "other"
+                                                ${prodcat}    Set Variable    10
+                                                ${prodcatflow}    Set Variable    ${addprodname6}
+                                                ${prodno}    Set Variable    ${prodnoother}
+                                            ELSE
+                                                IF    "${addprodname6}" == "Surgical Planning"
+                                                    ${prodcat}    Set Variable    5
+                                                    ${addprodname6}    Set Variable    implant-restoration
+                                                    ${productcatarray}    Set Variable    [2]
+                                                    ${prodcatflow}    Set Variable    Surgical Planning
+                                                ELSE
+                                                    Close All Browsers
+                                                END
+                                            END
+                                            
+                                        END
+                                    END
+                                END
+                            END
+                        END
+                    END
+                END
+                
+                Log To Console    ${prodcat} This is the product number based on the defined product category name
+                ${arrayno}    Set Variable    0
+                ${addprodcat}    Set Variable    ${prodcat}
+                #Assigning flow based on the product selected
+                ${inthelist}    Run keyword and return status    Should Be True    '${prodcatflow}' in ${prodcatlistunits}
+                Log To Console    ${inthelist}
+                IF    ${inthelist} == ${True}
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-0"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-0-${prodno}"]/div[2])${productcatarray}
+                    #click the instruction table to remove the design type dropdown modal
+                    Click Element    xpath=//*[@id="instruction-${last_index}"]
+                    #input number of units
+                    Input Text    xpath=//*[@id="units-${last_index}-${arrayno}"]    2
+                    #select position
+                    Select From List By Label   xpath=//*[@id="position-${last_index}-${arrayno}"]    Anterior
+                    #select design software
+                    Select From List By Label    xpath=//*[@id="scannerType-${last_index}"]    3Shape
+                    #input instructions
+                    # Input Text    xpath=//*[@id="instruction-${last_index}"]    test automation
+                    #click submit
+                    Sleep    1s
+
+                ELSE
+                    Click Element    xpath=//*[@id="select-design-type-${last_index}-${arrayno}"]
+                    Click Element    xpath=/html/body/div[1]/div/div/create-case-modal/div/div[1]/div[5]/table/tbody/tr[${length}]/td[3]/table/tbody/tr/td[2]/div[2]/div/div[${addprodcat}]/p
+                    #click the check box of the selected design type
+                    Click Element    xpath=(//*[@id="checkbox-${prodcatflow}-${last_index}-${arrayno}-${prodno}"]/div[2])${productcatarray}
+
+                END
+                END
+                Confirm Submit
 
 
+#For Shining 3d Testing
+Evaluate Test files
+    ${cases}    Get File    my_file.txt
+    Log To Console    ${cases}
+    ${cases}    Split String    ${cases}    ,
+    ${linelength}    Get Length    ${cases}
+    Set Global Variable    ${cases}
+Submit and complete the cases
+    FOR    ${case}    IN    @{cases}
+        Log To Console    ${case}
+        Sleep    3s
+        # Input Text    xpath=/html/body/header/div/nav/div/div[4]/div/div[2]/input   ${labname}
+        # Sleep    1
+        # Click Element    xpath=//li[contains(text(), 'Automation lab')]
+        Click Element    xpath=//*[@id="uia-btn-allcases"]
+        Sleep    2s
+        #assign case
+        Click Element    class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${case}
+        Sleep    2s
+        #Download file
+        Scroll to top
+        Click Element    xpath=//*[@id="uia-btn-assigned"]
+        Sleep    2s
+        Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[2]/div/div[3]/button
+        Sleep    15s    wait to download files
+        Scroll to top
+        Click Element    xpath=//*[@id="uia-btn-inprogress"]
+        #Submit file   
+        #click submit a file
+        Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
+        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]    
+        Log To Console    ${submitdesign}   upload design is visible.
+        IF    ${submitdesign} == ${true}
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        ELSE
+            Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
+            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        END
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
+        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s
+        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
+        Sleep    2s
+        #click Submit button
+        Click Element    xpath=//*[@id="uia-btn-submit"]
+        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
+        #close the success message
+        Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
+        #Check case on completed
+        Reload Page
+        Scroll to top
+        Click Element    xpath=//*[@id="uia-btn-completed"]/div
+        ${casesucompleted1}    Run keyword and return Status    Page Should Contain    ${case}      
+        Should Be True    ${casesucompleted1}
+        Log To Console    ${case} is completed
+    END
 
 
 
