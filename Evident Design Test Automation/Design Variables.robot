@@ -28,7 +28,7 @@ ${adminUser}    passportadmin@getnada.com
 ${adminPass}    password1
 ${Labnewemail}    labtestautomation1@getnada.com
 ${newlabname}    NewLab test Automation
-@{prodcatlistunits}    crown-and-bridge    implant-restoration
+${trayno}    1    #Aligner Tray number
 ${productcatarray}         #this is for the surgical planning product.
 ${prodcatflow}
 ${prodcat}        #dont enter any value
@@ -39,7 +39,7 @@ ${prodno}    0       #check the available values on Product ordering - Product n
 @{addprodname}    crown-and-bridge    implant-restoration    models    aligners
 ${prodnocnb}    3
 ${prodnomodel}    2
-${prodnoimplant}    4
+${prodnoimplant}    3
 ${prodnosurgical}    
 ${prodnoaligners}    1
 ${prodnoremovables}
@@ -47,7 +47,11 @@ ${prodnodento}
 ${prodnosnap}
 ${prodnoother}
 ${addprodcat}     #dont enter any value
+@{prodcatlistunits}    crown-and-bridge    implant-restoration    #Do not change
+@{alignerprods}    1    2
 
 
 
-#for shining 3d
+
+#for skillbond
+${skillbondlabname}    Skillbond Test Lab
