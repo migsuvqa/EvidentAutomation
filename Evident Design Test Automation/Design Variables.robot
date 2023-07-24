@@ -32,7 +32,7 @@ ${trayno}    1    #Aligner Tray number
 ${productcatarray}         #this is for the surgical planning product.
 ${prodcatflow}
 ${prodcat}        #dont enter any value
-${prodcatname}    Models    #check the available values on Product ordering - Product Category name             
+${prodcatname}    models    #check the available values on Product ordering - Product Category name             
 ${prodno}    0       #check the available values on Product ordering - Product number
 
 #for multiple product orders

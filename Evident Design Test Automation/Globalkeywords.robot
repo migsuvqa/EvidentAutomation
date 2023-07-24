@@ -24,7 +24,7 @@ Go to evident staging
 
 Go to preproddesign
     Open browser    ${desurl}    ${browser}
-    Set Browser Implicit Wait    20s
+    Set Browser Implicit Wait    30s
     Maximize Browser Window
 
 
@@ -96,7 +96,7 @@ Fill up case with favorite
                     ${prodcat}    Set Variable    2 
                     ${prodcatflow}    Set Variable    ${prodcatname}
                 ELSE
-                    IF    "${prodcatname}" == "Models"
+                    IF    "${prodcatname}" == "models"
                         ${prodcat}    Set Variable    3
                         ${prodcatflow}    Set Variable    ${prodcatname}
                     ELSE
@@ -315,7 +315,6 @@ Log out lab account
 Login Designer account
         #login designer account
         #click sign in
-       # Click Element    xpath=//*[@id="ed-close-warning-modal"]
         
         Click Element    xpath=//*[@id="login-in-page"]/div/div[2]/div/form/div[2]/button
         #input username
@@ -348,39 +347,23 @@ Process the case number
         Click Element    xpath=//*[@id="uia-btn-inprogress"]
         Sleep    2s
         #Edit tray number of Aligner product
-            IF    "${prodnoaligners}" in ${alignerprods}
+        IF    "${prodcatname}" == "aligners"
                 Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[3]/button    timeout=10s
                 Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[3]/button
                 Wait Until Element Is Visible    xpath=//*[@id="edit-case-modal"]/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[2]
-                IF    "${addprodname1}" == "aligners"
+                IF    "${prodno}" in ${alignerprods}
                     Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[2]/div[1]/table/tbody/tr[1]/td[5]/input    ${trayno}
                 ELSE
-                    IF    "${addprodname2}" == "aligners"
-                        Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[2]/div[1]/table/tbody/tr[2]/td[5]/input    ${trayno}
-                    ELSE
-                        IF    "${addprodname3}" == "aligners"
-                            Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[5]/input    ${trayno}
-                        ELSE
-                            IF    "${addprodname4}" == "aligners"
-                                Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[2]/div[1]/table/tbody/tr[4]/td[5]/input    ${trayno}
-                            ELSE
-                                IF    "${addprodname5}" == "aligners"
-                                    Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[2]/div[1]/table/tbody/tr[5]/td[5]/input    ${trayno}
-                                ELSE
-                                    Log To Console    Tray edited
-                                END
-                            END
-                        END
-                    END
+                 Log To Console    Case is aligner with Fabrication  
                 END
-                    
-            END
         Input Text    xpath=//*[@id="edit-case-modal"]/div[2]/div[3]/form/div[1]/div/textarea    Edit tray    #input reason for edit
         Wait Until Element Is Visible    xpath=//*[@id="uia-btn-sendrequest"][contains(text(), 'Submit')]
         Click element    xpath=//*[@id="uia-btn-sendrequest"][contains(text(), 'Submit')]    #submit edit
         Click Element    xpath=//*[@id="uia-btn-goback"]    #confirm edit
         Log To Console    Case tray edited
-        Reload Page 
+        Reload Page
+        END
+
         Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
         Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
         Sleep    2s
@@ -1660,7 +1643,9 @@ Submit single case with multiple products
 
 
 #For Skillbond Testing
-Retrieving new cases submitted by Skillbond
+Submit and complete the cases
+    WHILE    1 == 1
+    #Retrieving new cases submitted by Skillbond
     #click not assigned
     Click Element    xpath=//*[@id="uia-btn-notassigned"]/div/div[2][contains(text(), 'Not Assigned')]
     Sleep    2s
@@ -1669,7 +1654,7 @@ Retrieving new cases submitted by Skillbond
     Wait Until Element Is Visible    xpath=//*[@id="searchlab-dropdown"]/li[1]    timeout=100s
     Click Element    xpath=//*[@id="searchlab-dropdown"]/li[1][contains(text(), '${skillbondlabname}')]
     Sleep    2s
-    @{parentelement}    Get Webelements    xpath=//tr[./td/div[@class='ng-binding'] = "${skillbondlabname}"]
+    @{parentelement}    Get Webelements    xpath=//tr[./td/div[@class='ng-binding'] = "${skillbondlabname}"]    
     @{caselist}    Create List
     FOR    ${element}    IN    @{parentelement}
         ${getatt}    Selenium2Library.Get Element Attribute    ${element}    id
@@ -1677,63 +1662,192 @@ Retrieving new cases submitted by Skillbond
         Append To List    ${caselist}    ${splitatt}
     END
     Log To Console    ${caselist} These are the Cases to complete
-    Set Global Variable    @{caselist}
-Submit and complete the cases
-    FOR    ${case}    IN    @{caselist}
-        #assign case
-        Scroll to top
-        Click Element    xpath=//*[@id="uia-btn-notassigned"]/div/div[2][contains(text(), 'Not Assigned')]
-        Sleep    2s
-        Click Element    class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${case}
-        Sleep    2s
-        #Download file
-        Wait until element is enabled    xpath=//*[@id="uia-btn-assigned"]
-        Scroll to top
-        Click Element    xpath=//*[@id="uia-btn-assigned"]
-        Sleep    2s
-        #Click download button
-        Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[2]/div/div[3]/button
-        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button[contains(text(), 'Submit design file(s)')]    timeout=100s
-        #Submit file   
-        #Go to inprogress tab filter
-        # Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-inprogress"]
-        Sleep    2s
-        Click Element    xpath=//*[@id="uia-btn-inprogress"]
-        Sleep    2s
-        Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
-        Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
-        Sleep    2s
-        ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]
-        IF    ${submitdesign} == ${true}
-            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
-        ELSE
-            Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
-            Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+        FOR    ${case}    IN    @{caselist}
+            #assign case
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-notassigned"]/div/div[2][contains(text(), 'Not Assigned')]
+            Sleep    2s
+            Click Element    class=btn.btn-primary.btn-inverse.download-submit-button.uia-btn-assigntome.uia-btn-assigntome-${case}
+            Sleep    2s
+            #Download file
+            Wait until element is enabled    xpath=//*[@id="uia-btn-assigned"]
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-assigned"]
+            Sleep    2s
+            #Click download button
+            Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[2]/div/div[3]/button
+            Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button[contains(text(), 'Submit design file(s)')]    timeout=100s
+            #Submit file   
+            #Go to inprogress tab filter
+            # Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button    
+            Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button    #click submit button
+            Sleep    2s
+                ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]
+                IF    ${submitdesign} == ${true}
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                ELSE
+                    Click Element    xpath=//*[@id="checkCases_No_${case}"]/td[10]/div[3]/div/div[1]/button
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                END
+            Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=100s
+            Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=100s    
+            Sleep    1s
+            #click Submit button
+            Click Element    xpath=//*[@id="uia-btn-submit"]
+            Sleep    2s    
+            #close the success message
+            Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=100s
+            Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
+            #Check case on completed
+            Reload Page
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-completed"]/div
+            ${casesucompleted}    Run keyword and return Status    Page Should Contain    ${case}
+            Should Be True    ${casesucompleted}
+            Log To Console    ${case} is completed
+            
         END
-        # Click Element    xpath=//*[@id="checkCases_No_${checkcaseno}"]/td[10]/div[3]/div/div[1]/button
-        # Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
-        Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=20s
-        Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=20s    
-        Sleep    1s
-        #click Submit button
-        Click Element    xpath=//*[@id="uia-btn-submit"]
-        Sleep    2s    
-        #close the success message
-        Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=20s
-        Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
-        #Check case on completed
-        Reload Page
-        Scroll to top
-        Click Element    xpath=//*[@id="uia-btn-completed"]/div
-        ${casesucompleted}    Run keyword and return Status    Page Should Contain    ${case}
-        Should Be True    ${casesucompleted}
-        Log To Console    ${case} is completed
-        Reload page
-        
+            #Check the assigned filter
+            Addhoc - Check assigned cases
+
+            #Check the in progress filter
+            Addhoc - Check inprogress cases
+
+            Reload page
+            Sleep    30s    run interval
+            Scroll to top
     END
 
+Addhoc - Check assigned cases
+    #click assigned
+    Click Element    xpath=//*[@id="uia-btn-assigned"]
+    Sleep    2s
+    #input the lab name
+    Input Text    xpath=//*[@id="search-lab-input uia-textinput-labfilter"]    ${skillbondlabname} 
+    Wait Until Element Is Visible    xpath=//*[@id="searchlab-dropdown"]/li[1]    timeout=100s
+    Click Element    xpath=//*[@id="searchlab-dropdown"]/li[1][contains(text(), '${skillbondlabname}')]
+    Sleep    2s
+    @{parentelement2}    Get Webelements    xpath=//tr[./td/div[@class='ng-binding'] = "${skillbondlabname}"]
+    @{caselist2}    Create List
+    FOR    ${element2}    IN    @{parentelement2}
+        ${getatt2}    Selenium2Library.Get Element Attribute    ${element2}    id
+        ${splitatt2}    Strip String    ${getatt2}    left    checkCases_No_
+        Append To List    ${caselist2}    ${splitatt2}
+    END
+    Log To Console    ${caselist2} These are the Assigned Cases to complete
+        FOR    ${case2}    IN    @{caselist2}
+            #assign case
+            Scroll to top
+            #Download file
+            Wait until element is enabled    xpath=//*[@id="uia-btn-assigned"]
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-assigned"]
+            Sleep    2s
+            #Click download button
+            Click Element    xpath=//*[@id="checkCases_No_${case2}"]/td[10]/div[2]/div/div[3]/button
+            Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case2}"]/td[10]/div[3]/div/div[1]/button[contains(text(), 'Submit design file(s)')]    timeout=100s
+            #Submit file   
+            #Go to inprogress tab filter
+            # Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case2}"]/td[10]/div[3]/div/div[1]/button    
+            Click Element    xpath=//*[@id="checkCases_No_${case2}"]/td[10]/div[3]/div/div[1]/button    #click submit button
+            Sleep    2s
+                ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]
+                IF    ${submitdesign} == ${true}
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                ELSE
+                    Click Element    xpath=//*[@id="checkCases_No_${case2}"]/td[10]/div[3]/div/div[1]/button
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                END
+            Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=100s
+            Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=100s    
+            Sleep    1s
+            #click Submit button
+            Click Element    xpath=//*[@id="uia-btn-submit"]
+            Sleep    2s    
+            #close the success message
+            Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=100s
+            Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
+            #Check case on completed
+            Reload Page
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-completed"]/div
+            ${casesucompleted2}    Run keyword and return Status    Page Should Contain    ${case2}
+            Should Be True    ${casesucompleted2}
+            Log To Console    ${case2} is completed
+            Reload page   
+        END
 
 
+Addhoc - Check inprogress cases
+    #click in progress
+    Click Element    xpath=//*[@id="uia-btn-inprogress"]
+    Sleep    2s
+    #input the lab name
+    Input Text    xpath=//*[@id="search-lab-input uia-textinput-labfilter"]    ${skillbondlabname} 
+    Wait Until Element Is Visible    xpath=//*[@id="searchlab-dropdown"]/li[1]    timeout=100s
+    Click Element    xpath=//*[@id="searchlab-dropdown"]/li[1][contains(text(), '${skillbondlabname}')]
+    Sleep    2s
+    @{parentelement3}    Get Webelements    xpath=//tr[./td/div[@class='ng-binding'] = "${skillbondlabname}"]
+    @{caselist3}    Create List
+    FOR    ${element3}    IN    @{parentelement3}
+        ${getatt3}    Selenium2Library.Get Element Attribute    ${element3}    id
+        ${splitatt3}    Strip String    ${getatt3}    left    checkCases_No_
+        Append To List    ${caselist3}    ${splitatt3}
+    END
+    Log To Console    ${caselist3} These are the in progress Cases to complete
+        FOR    ${case3}    IN    @{caselist3}
+            #assign case
+            Scroll to top
+            #Download file
+            Wait until element is enabled    xpath=//*[@id="uia-btn-inprogress"]
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            #Submit file   
+            #Go to inprogress tab filter
+            # Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-inprogress"]
+            Sleep    2s
+            Wait Until Element Is Visible    xpath=//*[@id="checkCases_No_${case3}"]/td[10]/div[3]/div/div[1]/button    
+            Click Element    xpath=//*[@id="checkCases_No_${case3}"]/td[10]/div[3]/div/div[1]/button    #click submit button
+            Sleep    2s
+                ${submitdesign}    Run Keyword And Return Status    Page Should Contain Element    xpath=//*[@id="submit-design-modal"]/div[2]/div[2]/div[1]
+                IF    ${submitdesign} == ${true}
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                ELSE
+                    Click Element    xpath=//*[@id="checkCases_No_${case3}"]/td[10]/div[3]/div/div[1]/button
+                    Choose file    xpath=//*[@id="hiddeninput-cm"]    ${CURDIR}/design1.jfif
+                END
+            Wait Until Element Is Visible    class=remove_file.ng-scope    timeout=100s
+            Wait Until Element Is Enabled    xpath=//*[@id="uia-btn-submit"]    timeout=100s    
+            Sleep    1s
+            #click Submit button
+            Click Element    xpath=//*[@id="uia-btn-submit"]
+            Sleep    2s    
+            #close the success message
+            Wait Until Element Is Visible    xpath=//div[contains(text(), 'Your file(s) has been submitted.')]    timeout=100s
+            Click Element    xpath=//*[@id="submit-design-modal"]/div[1]/img
+            #Check case on completed
+            Reload Page
+            Scroll to top
+            Click Element    xpath=//*[@id="uia-btn-completed"]/div
+            ${casesucompleted3}    Run keyword and return Status    Page Should Contain    ${case3}
+            Should Be True    ${casesucompleted3}
+            Log To Console    ${case3} is completed
+            Reload page   
+        END
+
+
+   
 
 
 
